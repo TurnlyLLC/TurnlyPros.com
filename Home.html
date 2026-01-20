@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turnly | STR Turnover Cleaning</title>
+  <meta name="description" content="Turnly provides checklist-driven, photo-documented STR turnover cleaning for hosts and portfolio operators." />
+
+  <!-- External stylesheet (for real deployment) -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Inline stylesheet so preview renders correctly in edit mode -->
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#101827;
+      --muted:#a9b3c7;
+      --text:#eef2ff;
+      --border:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --accent2:#22c55e;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.20), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
+
+    /* Standard body section wrapper */
+    .section{
+      padding:48px 40px;
+    }
+
+    .section + .section{
+      padding-top:0;
+    }
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,23,.7);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0}
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand-mark{
+      width:36px;height:36px;border-radius:12px;
+      display:grid;place-items:center;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(34,197,94,.75));
+    }
+
+    .menu{display:flex;gap:14px;align-items:center}
+
+    .nav-link{
+      padding:10px 10px;
+      border-radius:10px;
+      color:rgba(238,242,255,.88);
+      font-weight:700;
+      background:transparent;
+      border:0;
+    }
+    .nav-link:hover{background:rgba(255,255,255,.06)}
+
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      font-weight:700;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
+      border-color: rgba(124,92,255,.6);
+    }
+
+    .hero{min-height:100vh;display:flex;align-items:center;padding:0}
+
+    h1{font-size:42px;line-height:1.15;margin:12px 0}
+    .lead{font-size:18px;color:rgba(238,242,255,.9);max-width:60ch}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .card{
+      background: rgba(16,24,39,.8);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:20px;
+    }
+
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid var(--border);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    ul{padding-left:18px}
+    li{margin:6px 0}
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#" aria-label="Turnly Home">
+      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" style="height:56px;width:auto;display:block;" />
+    </a>
+
+    <nav class="menu" aria-label="Primary">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO SECTION (Above the Fold) -->
+  <section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
+      <source src="https://i.imgur.com/SIZaTQ0.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Brand Name Overlay -->
+    <div style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;">
+      <h1 style="font-size:clamp(64px,12vw,140px);letter-spacing:2px;font-weight:900;margin:0;">Turnly</h1>
+    </div>
+  </section>
+
+  <!-- HERO VALUE PROPOSITION (Immediately Below Video) -->
+  <section class="container section">
+    <div class="grid">
+      <div>
+        <h1>Turnovers Done Right. Every Time.</h1>
+        <p class="lead">
+          <strong>Professional short-term rental turnovers built for serious hosts.</strong>
+          Turnly handles the cleaning, resetting, and readiness of your property so every guest walks into a five-star experience — without last-minute stress, missed details, or unreliable cleaners.
+        </p>
+        <p class="lead" style="margin-top:10px"><strong>You host. We handle the rest.</strong></p>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+        </div>
+
+        <div style="margin-top:18px;color:rgba(238,242,255,.9)">
+          <ul style="list-style:none;padding-left:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+            <li>✔ Built exclusively for short-term rentals</li>
+            <li>✔ Photo-documented cleans</li>
+            <li>✔ Consistent, trained teams</li>
+            <li>✔ Reliable scheduling & fast response</li>
+            <li>✔ Scalable for single listings or portfolios</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>What Turnly Does</h3>
+        <p class="lead" style="font-size:15px">
+          Turnly is a <strong>full-service short-term rental turnover company</strong>. That means we don’t just clean — we reset your property for the next guest.
+        </p>
+        <ul>
+          <li>Complete top-to-bottom turnover clean</li>
+          <li>Bathroom and kitchen sanitization</li>
+          <li>Floor care (vacuuming & mopping)</li>
+          <li>Trash removal</li>
+          <li>Restocking check (if applicable)</li>
+          <li>Bed resets & linen handling (when selected)</li>
+          <li>Final walkthrough</li>
+          <li>Photo documentation before and after</li>
+        </ul>
+        <p class="lead" style="font-size:15px;margin-top:10px"><strong>Your property is guest-ready — not “mostly clean.”</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM (RELATABLE PAIN) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Hosting shouldn’t feel this hard.</h2>
+      <p class="lead" style="font-size:16px">
+        If you manage a short-term rental, you’ve probably dealt with:
+      </p>
+      <ul>
+        <li>Cleaners canceling or showing up late</li>
+        <li>Inconsistent quality from one turnover to the next</li>
+        <li>Missed details that lead to bad reviews</li>
+        <li>Scrambling between check-out and check-in</li>
+        <li>Juggling texts, payments, and schedules across multiple listings</li>
+      </ul>
+      <p class="lead" style="font-size:16px;margin-top:10px">
+        Most cleaning companies aren’t built for short-term rentals — and it shows.
+      </p>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>Turnly was built from day one for STR turnovers.</strong></p>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATION (THIS IS WHERE YOU WIN) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Why Hosts Choose Turnly</h2>
+
+      <h3 style="margin:14px 0 6px">We’re Not a Marketplace. We’re an Operator.</h3>
+      <p class="lead" style="font-size:16px">
+        You’re not hiring random cleaners. You’re working with <strong>Turnly-trained teams</strong>, standardized processes, and documented results.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Consistency Over Convenience</h3>
+      <p class="lead" style="font-size:16px">
+        Anyone can offer a cheap clean. We deliver <strong>repeatable quality</strong> that protects your reviews and your revenue.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Built for Scale</h3>
+      <p class="lead" style="font-size:16px">
+        Whether you manage <strong>one listing or twenty</strong>, our systems are designed to grow with you — without sacrificing quality.
+      </p>
+
+      <h3 style="margin:14px 0 6px">Photo-Documented Accountability</h3>
+      <p class="lead" style="font-size:16px">
+        Every clean is documented. You know exactly what was done — no guessing, no excuses.
+      </p>
+
+      <h3 style="margin:14px 0 6px">We Respect Your Calendar</h3>
+      <p class="lead" style="font-size:16px">
+        Turnovers are scheduled around real check-in/check-out windows, not “whenever the cleaner gets there.”
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES / PACKAGES -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Turnover Services</h2>
+
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Standard Turnover</h3>
+          <p class="lead" style="font-size:15px">Perfect for hosts who want a reliable, professional reset after every guest.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Turnover + Linen Service</h3>
+          <p class="lead" style="font-size:15px">We handle stripping, replacing, and managing linens so you never worry about laundry or missing sets.</p>
+        </div>
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Portfolio & Multi-Listing Support</h3>
+          <p class="lead" style="font-size:15px">Centralized scheduling, consistent pricing, and dependable teams for hosts managing multiple properties.</p>
+        </div>
+      </div>
+
+      <p class="lead" style="font-size:16px;margin-top:12px"><em>Not sure what you need? We’ll help you choose the right setup.</em></p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (LOW FRICTION) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">How Turnly Works</h2>
+      <ol style="margin:10px 0 0;padding-left:18px">
+        <li style="margin:8px 0"><strong>Tell Us About Your Property</strong> — Share your listing details with us.</li>
+        <li style="margin:8px 0"><strong>We Schedule the Turnover</strong> — We align with your booking calendar and access details.</li>
+        <li style="margin:8px 0"><strong>We Execute the Clean</strong> — Trained teams follow our standardized turnover checklist.</li>
+        <li style="margin:8px 0"><strong>You Get Confirmation</strong> — Photo documentation confirms your property is guest-ready.</li>
+      </ol>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>That’s it. No chasing cleaners. No stress.</strong></p>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF (PLACEHOLDER) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Built for Hosts Who Care About Reviews</h2>
+      <p class="lead" style="font-size:16px">
+        Turnly is trusted by hosts who understand that cleanliness drives reviews, reviews drive bookings, and bookings drive revenue.
+      </p>
+      <p class="lead" style="font-size:16px"><em>(Insert testimonials, reviews, or early client quotes here as they come in.)</em></p>
+    </div>
+  </section>
+
+  <!-- STRONG CTA (END) -->
+  <section class="container section">
+    <div class="card">
+      <h2 style="margin:0 0 10px;font-size:22px">Ready to Stop Worrying About Turnovers?</h2>
+      <p class="lead" style="font-size:16px">
+        If you’re tired of unreliable cleaners, inconsistent results, and last-minute panic — <strong>Turnly is built for you.</strong>
+      </p>
+      <p class="lead" style="font-size:16px">
+        Let us handle the turnovers, so you can focus on growing your hosting business.
+      </p>
+
+      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+        
+      </div>
+
+      <p class="lead" style="font-size:14px;margin-top:14px;color:rgba(238,242,255,.8)">
+        Turnly — professional short-term rental turnovers, done right.
+      </p>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
