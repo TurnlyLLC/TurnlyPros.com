@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turnly | Services</title>
+  <meta name="description" content="Turnly services: professional short-term rental turnovers with tiered options from standard cleaning to full-service turnover management." />
+
+  <!-- External stylesheet (for real deployment) -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Inline stylesheet so preview renders correctly in edit mode -->
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#101827;
+      --muted:#a9b3c7;
+      --text:#eef2ff;
+      --border:rgba(255,255,255,.10);
+      --accent:#7c5cff;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.20), transparent 60%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
+
+    /* Standard body section wrapper – match homepage spacing */
+    .section{
+      padding:48px 40px;
+      margin-bottom:0;
+    }
+
+    .section:last-of-type{
+      margin-bottom:0;
+    }
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,23,.7);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:0}
+
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+
+    .menu{display:flex;gap:14px;align-items:center}
+
+    .nav-link{
+      padding:10px 10px;
+      border-radius:10px;
+      color:rgba(238,242,255,.88);
+      font-weight:700;
+      background:transparent;
+      border:0;
+    }
+    .nav-link:hover{background:rgba(255,255,255,.06)}
+
+    .btn{
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
+      border-color: rgba(124,92,255,.6);
+    }
+
+    h1{font-size:42px;line-height:1.15;margin:0 0 12px}
+    h2{margin:0 0 10px;font-size:22px}
+    h3{margin:0 0 8px}
+
+    .lead{font-size:18px;color:rgba(238,242,255,.9);max-width:70ch}
+    .muted{color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .card{
+      background: rgba(16,24,39,.8);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:20px;
+    }
+
+    .card-soft{
+      background: rgba(255,255,255,.04);
+      box-shadow:none;
+    }
+
+    ul{padding-left:18px}
+    li{margin:6px 0}
+
+    .kicker{
+      display:inline-block;
+      font-weight:800;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size:12px;
+      color: rgba(238,242,255,.85);
+      background:rgba(255,255,255,.06);
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      margin-bottom:14px;
+    }
+
+    .divider{height:1px;background:var(--border);margin:16px 0}
+
+    .table-wrap{overflow:auto;border-radius:14px;border:1px solid var(--border)}
+    table{width:100%;border-collapse:collapse;min-width:720px;background:rgba(16,24,39,.55)}
+    th,td{padding:12px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
+    th{font-size:13px;text-transform:uppercase;letter-spacing:.5px;color:rgba(238,242,255,.85);background:rgba(255,255,255,.04)}
+    td{color:rgba(238,242,255,.9)}
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .section{padding:36px 22px}
+      .container{padding:0 22px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#" aria-label="Turnly Home">
+      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" style="height:56px;width:auto;display:block;" />
+    </a>
+
+    <nav class="menu" aria-label="Primary">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Services</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="btn btn-primary">Tell Us About Your Property</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Services Hero Video -->
+<section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
+  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
+    <source src="https://i.imgur.com/ZGgkclI.mp4" type="video/mp4" />
+  </video>
+  <div class="container" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
+    <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Services</h1>
+  </div>
+</section>
+
+<main>
+  <!-- Services Header -->
+  <section class="container section">
+    <div class="grid">
+      <div>
+        
+        <h1>Professional Short-Term Rental Turnovers</h1>
+        <p class="lead">
+          Turnly delivers structured, repeatable turnover services built exclusively for short-term rentals.
+          Each tier is designed to meet hosts where they are — from hands-on owners to fully hands-off operators.
+        </p>
+        <p class="lead" style="margin-top:10px">You choose the level of involvement.<br/>We handle the rest.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#">Upgrade Your Turnovers</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 10px">At a glance</h3>
+        <ul style="margin:0">
+          <li><strong>Standard Turnover:</strong> reliable reset after every guest</li>
+          <li><strong>Standard + Linen:</strong> beds + towels handled for you</li>
+          <li><strong>Full Service:</strong> stocking + oversight between stays</li>
+        </ul>
+        <div class="divider"></div>
+        <p class="muted" style="margin:0">
+          Built for repeat performance—process-driven, documented, and consistent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tier 1 -->
+  <section class="container section">
+    <div class="card">
+      <h2>Standard Turnover</h2>
+      <p class="lead" style="font-size:16px"><strong>Reliable, Professional Resets After Every Guest</strong></p>
+      <p class="lead" style="font-size:16px">
+        Our Standard Turnover is the foundation of Turnly. It ensures your property is consistently cleaned, reset, and ready for the next check-in.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>Included:</h3>
+      <ul>
+        <li>Full top-to-bottom cleaning</li>
+        <li>Kitchen and bathroom sanitization</li>
+        <li>Floor care throughout the property</li>
+        <li>Dusting of visible surfaces</li>
+        <li>Trash removal</li>
+        <li>Visual restock check (host-provided supplies)</li>
+        <li>Final walkthrough</li>
+        <li>Photo documentation after completion</li>
+      </ul>
+
+      <p class="lead" style="font-size:16px"><strong>Best for:</strong> Hands-on hosts who want dependable cleaning without surprises.</p>
+    </div>
+  </section>
+
+  <!-- Tier 2 -->
+  <section class="container section">
+    <div class="card">
+      <h2>Standard + Linen Service</h2>
+      <p class="lead" style="font-size:16px"><strong>Fewer Headaches. Greater Consistency.</strong></p>
+      <p class="lead" style="font-size:16px">
+        This tier removes laundry and bed preparation from your workload while maintaining the same high turnover standards.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>Includes everything in Standard, plus:</h3>
+      <ul>
+        <li>Stripping used linens</li>
+        <li>Replacing beds with clean, prepped linens</li>
+        <li>Towel resets</li>
+        <li>Linen rotation handling</li>
+        <li>Consistent bed presentation across stays</li>
+      </ul>
+
+      <p class="lead" style="font-size:16px"><strong>Best for:</strong> Remote hosts, multi-unit owners, and anyone tired of managing laundry logistics.</p>
+    </div>
+  </section>
+
+  <!-- Tier 3 -->
+  <section class="container section">
+    <div class="card">
+      <h2>Full Service Turnover Management</h2>
+      <p class="lead" style="font-size:16px"><strong>Truly Hands-Off Hosting</strong></p>
+      <p class="lead" style="font-size:16px">
+        Full Service is Turnly’s most comprehensive offering — built for hosts who want their property completely managed between guests.
+      </p>
+      <p class="lead" style="font-size:16px">
+        With Full Service, you don’t just get a clean rental. You get operational oversight.
+      </p>
+
+      <div class="divider"></div>
+
+      <h3>Includes everything in Standard + Linen, plus:</h3>
+      <ul>
+        <li>Toiletry and consumable tracking</li>
+        <li>Restocking of approved supplies (toilet paper, paper towels, soap, etc.)</li>
+        <li>Inventory level monitoring</li>
+        <li>Basic inventory management (linens, consumables, essentials)</li>
+        <li>Turnover reports and condition notes</li>
+        <li>Proactive issue flagging when something needs attention</li>
+      </ul>
+
+      <p class="lead" style="font-size:16px">
+        Your rental is cleaned, stocked, documented, and ready — without you lifting a finger.
+      </p>
+
+      <p class="lead" style="font-size:16px"><strong>Best for:</strong> Professional hosts, portfolio operators, and anyone who never wants to “run to the property” again.</p>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="container section">
+    <div class="card">
+      <h2>Service Comparison Overview</h2>
+      <div class="table-wrap" style="margin-top:14px">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Standard</th>
+              <th>Standard + Linen</th>
+              <th>Full Service</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Professional Turnover Clean</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Photo Documentation</td><td>✔</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Linen Handling &amp; Bed Resets</td><td>—</td><td>✔</td><td>✔</td></tr>
+            <tr><td>Toiletry Restocking</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Inventory Tracking</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Turnover Reporting</td><td>—</td><td>—</td><td>✔</td></tr>
+            <tr><td>Hands-Off Operation</td><td>—</td><td>Partial</td><td>✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Turnly -->
+  <section class="container section">
+    <div class="card">
+      <h2>Why Turnly</h2>
+      <p class="lead" style="font-size:16px">
+        Turnly isn’t a cleaning marketplace or a side hustle operation. We’re a turnover company built for repeat performance.
+      </p>
+
+      <div class="divider"></div>
+
+      <ul style="list-style:none;padding-left:0;margin:0">
+        <li style="margin:10px 0">✔ STR-specific workflows built for turnovers, not houses</li>
+        <li style="margin:10px 0">✔ Standardized, checklist-driven processes on every clean</li>
+        <li style="margin:10px 0">✔ Accountable teams trained to Turnly standards</li>
+        <li style="margin:10px 0">✔ Clear, proactive communication before and after each turnover</li>
+        <li style="margin:10px 0">✔ Scalable systems that grow with your portfolio</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <p class="lead" style="font-size:16px">
+        Our goal is simple: <strong>Your property should feel identical — and excellent — after every stay.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- How to Get Started -->
+  <section class="container section">
+    <div class="card">
+      <h2>How to Get Started</h2>
+      <ol style="margin:10px 0 0;padding-left:18px">
+        <li style="margin:8px 0"><strong>Tell Us About Your Property</strong> — Share your listing details or portfolio.</li>
+        <li style="margin:8px 0"><strong>Choose Your Service Tier</strong> — We’ll recommend the best fit if you’re unsure.</li>
+        <li style="margin:8px 0"><strong>We Handle the Turnovers</strong> — Cleaning, linens, stocking, documentation — done.</li>
+        <li style="margin:8px 0"><strong>You Stay Hands-Off</strong> — Or as involved as you want to be.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="container section">
+    <div class="card">
+      <h2>Ready to Simplify Your Hosting?</h2>
+      <p class="lead" style="font-size:16px">
+        Whether you want reliable cleaning or full hands-off management between guests, Turnly has you covered.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn" href="#">Upgrade Your Turnovers</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
