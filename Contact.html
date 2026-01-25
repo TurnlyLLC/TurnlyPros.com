@@ -38,6 +38,7 @@
 
     a{text-decoration:none;color:inherit}
 
+    /* ✅ responsive container */
     .container{max-width:var(--max);margin:0 auto;padding:0 40px}
 
     /* Match homepage spacing model (padding-only between sections) */
@@ -52,8 +53,18 @@
       border-bottom:1px solid var(--border);
     }
 
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:0}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0;
+      min-height:72px;
+      gap:14px;
+    }
 
+    .brand img{height:56px;width:auto;display:block;max-width:100%}
+
+    /* Desktop menu */
     .menu{display:flex;gap:14px;align-items:center}
 
     .nav-link{
@@ -61,8 +72,11 @@
       border-radius:10px;
       font-weight:700;
       color:rgba(238,242,255,.88);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
     }
-
     .nav-link:hover{background:rgba(255,255,255,.06)}
 
     .btn{
@@ -75,6 +89,9 @@
       align-items:center;
       justify-content:center;
       gap:10px;
+      cursor:pointer;
+      white-space:nowrap;
+      max-width:100%;
     }
 
     .btn-primary{
@@ -95,6 +112,56 @@
       transform: translateY(0);
       box-shadow: 0 6px 18px rgba(124,92,255,.35);
     }
+
+    /* ✅ Hamburger button (hidden on desktop) */
+    .hamburger{
+      display:none;
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      align-items:center;
+      justify-content:center;
+      padding:0;
+    }
+    .hamburger:hover{background:rgba(255,255,255,.08)}
+    .hamburger-lines{width:20px;height:14px;position:relative}
+    .hamburger-lines span{
+      position:absolute;left:0;right:0;height:2px;
+      background:rgba(238,242,255,.92);
+      border-radius:999px;
+      transition:transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .hamburger-lines span:nth-child(1){top:0}
+    .hamburger-lines span:nth-child(2){top:6px}
+    .hamburger-lines span:nth-child(3){top:12px}
+
+    /* ✅ Mobile drawer */
+    .mobile-drawer{
+      display:none;
+      border-top:1px solid var(--border);
+      background: rgba(11,15,23,.88);
+      backdrop-filter: blur(10px);
+    }
+    .mobile-drawer-inner{
+      padding:12px 0 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .mobile-drawer a{
+      width:100%;
+      justify-content:flex-start;
+    }
+    .mobile-drawer .btn-primary{
+      justify-content:center;
+    }
+
+    /* ✅ open state */
+    header[data-menu-open="true"] .mobile-drawer{display:block;}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(3){top:6px;transform:rotate(-45deg)}
 
     h1{font-size:42px;line-height:1.15;margin:0 0 12px}
     h2{margin:0 0 10px;font-size:22px}
@@ -144,7 +211,6 @@
     }
 
     input::placeholder, textarea::placeholder{color:rgba(238,242,255,.55)}
-
     textarea{min-height:140px;resize:vertical}
 
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -173,8 +239,11 @@
       font-weight:700;
       color:rgba(238,242,255,.92);
       margin:6px 10px 0 0;
+      flex-wrap:wrap;
+      max-width:100%;
     }
 
+    /* ✅ existing breakpoint (layout stack) */
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
       h1{font-size:34px}
@@ -182,22 +251,68 @@
       .container{padding:0 22px}
       .form-row{grid-template-columns:1fr}
     }
+
+    /* ✅ mobile nav + hero padding */
+    @media (max-width: 720px){
+      .container{padding:0 16px;}
+      .section{padding:28px 16px;}
+
+      .brand img{height:44px;}
+
+      .menu{display:none;}
+      .hamburger{display:inline-flex;}
+
+      .btn{white-space:normal;}
+      .lead{font-size:16px;}
+
+      .hero-title-wrap{padding:0 16px !important;}
+    }
+
+    @media (max-width: 420px){
+      .btn{width:100%;}
+    }
   </style>
 </head>
+
 <body>
 
-<header>
+<header id="siteHeader" data-menu-open="false">
   <div class="container nav">
-    <a href="#" aria-label="Turnly Home">
-      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" style="height:56px;width:auto;display:block;" />
+    <a class="brand" href="index.html" aria-label="Turnly Home">
+      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
     </a>
 
+    <!-- Desktop Nav -->
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
       <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
     </nav>
+
+    <!-- Mobile Hamburger -->
+    <button
+      class="hamburger"
+      id="hamburgerBtn"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="mobileDrawer"
+      aria-expanded="false"
+    >
+      <span class="hamburger-lines" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile">
+    <div class="container mobile-drawer-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="Services.html" class="nav-link">Services</a>
+      <a href="Contact.html" class="nav-link">Contact</a>
+      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+    </div>
   </div>
 </header>
 
@@ -206,7 +321,7 @@
   <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
     <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
   </video>
-  <div class="container" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
+  <div class="container hero-title-wrap" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
     <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Contact</h1>
   </div>
 </section>
@@ -254,7 +369,6 @@
           Manual intake (no calendar, no payment). We’ll respond with next steps.
         </p>
 
-        <!-- NOTE: This is a static form. Wire it to your backend or a form service later. -->
         <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
           <div class="form-row">
             <div>
@@ -298,7 +412,7 @@
 
           <input type="hidden" name="_subject" value="Turnly Contact Form Submission" />
 
-          <!-- Honeypot (spam protection): humans won't see this; bots often fill it -->
+          <!-- Honeypot (spam protection) -->
           <div class="hidden" aria-hidden="true">
             <label for="company">Company</label>
             <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
@@ -321,7 +435,6 @@
           <span class="pill">Email: admin@turnlypros.com</span>
           <span class="pill">Service Area: North Carolina</span>
         </div>
-        
       </div>
     </div>
   </section>
@@ -343,6 +456,43 @@
 </main>
 
 <script>
+  // ✅ Hamburger menu toggle
+  (function () {
+    const header = document.getElementById("siteHeader");
+    const btn = document.getElementById("hamburgerBtn");
+    const drawer = document.getElementById("mobileDrawer");
+
+    function setOpen(isOpen) {
+      header.setAttribute("data-menu-open", isOpen ? "true" : "false");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    }
+
+    btn.addEventListener("click", function () {
+      const open = header.getAttribute("data-menu-open") === "true";
+      setOpen(!open);
+    });
+
+    // Close drawer when clicking a link inside it
+    drawer.addEventListener("click", function (e) {
+      const target = e.target;
+      if (target && target.tagName === "A") setOpen(false);
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+
+    // If resized to desktop, close drawer (prevents stuck-open state)
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(min-width: 721px)").matches) setOpen(false);
+    });
+  })();
+</script>
+
+<script>
+  // ✅ Formspree submit + success state + honeypot
   (function(){
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
