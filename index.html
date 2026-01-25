@@ -36,16 +36,17 @@
     }
 
     a{text-decoration:none;color:inherit}
-    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
+
+    /* ✅ responsive container */
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 40px;
+    }
 
     /* Standard body section wrapper */
-    .section{
-      padding:48px 40px;
-    }
-
-    .section + .section{
-      padding-top:0;
-    }
+    .section{ padding:48px 40px; }
+    .section + .section{ padding-top:0; }
 
     header{
       position:sticky;top:0;z-index:50;
@@ -54,15 +55,19 @@
       border-bottom:1px solid var(--border);
     }
 
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:0}
-
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand-mark{
-      width:36px;height:36px;border-radius:12px;
-      display:grid;place-items:center;
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(34,197,94,.75));
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0;
+      min-height:72px;
+      gap:14px;
     }
 
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand img{height:56px;width:auto;display:block;max-width:100%}
+
+    /* Desktop menu */
     .menu{display:flex;gap:14px;align-items:center}
 
     .nav-link{
@@ -72,6 +77,10 @@
       font-weight:700;
       background:transparent;
       border:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      white-space:nowrap;
     }
     .nav-link:hover{background:rgba(255,255,255,.06)}
 
@@ -81,12 +90,71 @@
       border:1px solid var(--border);
       background:rgba(255,255,255,.05);
       font-weight:700;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      white-space:nowrap;
+      max-width:100%;
+      cursor:pointer;
     }
 
     .btn-primary{
       background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
       border-color: rgba(124,92,255,.6);
     }
+
+    /* ✅ Hamburger button (hidden on desktop) */
+    .hamburger{
+      display:none;
+      width:44px;height:44px;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      align-items:center;
+      justify-content:center;
+      padding:0;
+    }
+    .hamburger:hover{background:rgba(255,255,255,.08)}
+    .hamburger-lines{
+      width:20px;height:14px;position:relative;
+    }
+    .hamburger-lines span{
+      position:absolute;left:0;right:0;height:2px;
+      background:rgba(238,242,255,.92);
+      border-radius:999px;
+      transition:transform .2s ease, top .2s ease, opacity .2s ease;
+    }
+    .hamburger-lines span:nth-child(1){top:0}
+    .hamburger-lines span:nth-child(2){top:6px}
+    .hamburger-lines span:nth-child(3){top:12px}
+
+    /* ✅ Mobile drawer */
+    .mobile-drawer{
+      display:none;
+      border-top:1px solid var(--border);
+      background: rgba(11,15,23,.88);
+      backdrop-filter: blur(10px);
+    }
+    .mobile-drawer-inner{
+      padding:12px 0 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .mobile-drawer a{
+      width:100%;
+      justify-content:flex-start;
+    }
+    .mobile-drawer .btn-primary{
+      justify-content:center;
+    }
+
+    /* ✅ toggle open state */
+    header[data-menu-open="true"] .mobile-drawer{display:block;}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
+    header[data-menu-open="true"] .hamburger-lines span:nth-child(3){top:6px;transform:rotate(-45deg)}
 
     .hero{min-height:100vh;display:flex;align-items:center;padding:0}
 
@@ -108,16 +176,6 @@
       padding:20px;
     }
 
-    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-    .pill{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid var(--border);
-      font-size:13px;
-      font-weight:700;
-    }
-
     ul{padding-left:18px}
     li{margin:6px 0}
 
@@ -125,22 +183,70 @@
       .grid{grid-template-columns:1fr}
       h1{font-size:34px}
     }
+
+    /* ✅ Mobile: show hamburger, hide desktop menu, tighten padding */
+    @media (max-width: 720px){
+      .container{padding:0 16px;}
+      .section{padding:28px 16px;}
+
+      .brand img{height:44px;}
+
+      .menu{display:none;}
+      .hamburger{display:inline-flex;}
+
+      .hero h1{
+        padding:0 12px;
+        text-align:center;
+      }
+
+      .lead{font-size:16px;}
+    }
+
+    @media (max-width: 420px){
+      .btn{white-space:normal;}
+    }
   </style>
 </head>
+
 <body>
 
-<header>
+<header id="siteHeader" data-menu-open="false">
   <div class="container nav">
     <a class="brand" href="#" aria-label="Turnly Home">
-      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" style="height:56px;width:auto;display:block;" />
+      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
     </a>
 
+    <!-- Desktop Nav -->
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
       <a href="Contact.html" class="btn btn-primary">Tell Us About Your Property</a>
     </nav>
+
+    <!-- Mobile Hamburger -->
+    <button
+      class="hamburger"
+      id="hamburgerBtn"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="mobileDrawer"
+      aria-expanded="false"
+    >
+      <span class="hamburger-lines" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile">
+    <div class="container mobile-drawer-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="Services.html" class="nav-link">Services</a>
+      <a href="Contact.html" class="nav-link">Contact</a>
+      <a href="Contact.html" class="btn btn-primary">Tell Us About Your Property</a>
+    </div>
   </div>
 </header>
 
@@ -154,7 +260,7 @@
 
     <!-- Brand Name Overlay -->
     <div style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;">
-      <h1 style="font-size:clamp(64px,12vw,140px);letter-spacing:2px;font-weight:900;margin:0;">Turnly</h1>
+      <h1 style="font-size:clamp(56px,12vw,140px);letter-spacing:2px;font-weight:900;margin:0;">Turnly</h1>
     </div>
   </section>
 
@@ -174,7 +280,7 @@
         </div>
 
         <div style="margin-top:18px;color:rgba(238,242,255,.9)">
-          <ul style="list-style:none;padding-left:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+          <ul style="list-style:none;padding-left:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px">
             <li>✔ Built exclusively for short-term rentals</li>
             <li>✔ Photo-documented cleans</li>
             <li>✔ Consistent, trained teams</li>
@@ -323,7 +429,6 @@
 
       <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
         <a href="Contact.html" class="btn btn-primary">Tell Us About Your Property</a>
-        
       </div>
 
       <p class="lead" style="font-size:14px;margin-top:14px;color:rgba(238,242,255,.8)">
@@ -332,6 +437,42 @@
     </div>
   </section>
 </main>
+
+<!-- ✅ Hamburger toggle logic (no dependencies) -->
+<script>
+  (function () {
+    const header = document.getElementById("siteHeader");
+    const btn = document.getElementById("hamburgerBtn");
+    const drawer = document.getElementById("mobileDrawer");
+
+    function setOpen(isOpen) {
+      header.setAttribute("data-menu-open", isOpen ? "true" : "false");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    }
+
+    btn.addEventListener("click", function () {
+      const open = header.getAttribute("data-menu-open") === "true";
+      setOpen(!open);
+    });
+
+    // Close drawer when clicking a link inside it
+    drawer.addEventListener("click", function (e) {
+      const target = e.target;
+      if (target && target.tagName === "A") setOpen(false);
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setOpen(false);
+    });
+
+    // If resized to desktop, close drawer (prevents stuck-open state)
+    window.addEventListener("resize", function () {
+      if (window.matchMedia("(min-width: 721px)").matches) setOpen(false);
+    });
+  })();
+</script>
 
 </body>
 </html>
