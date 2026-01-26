@@ -168,6 +168,14 @@
       align-items:start;
     }
 
+    /* ✅ Services cards grid (3-up on desktop, stacks on mobile) */
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
     .card{
       background: rgba(16,24,39,.8);
       border:1px solid var(--border);
@@ -181,6 +189,7 @@
 
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr} /* ✅ stack services cards */
       h1{font-size:34px}
     }
 
@@ -368,7 +377,8 @@
     <div class="card">
       <h2 style="margin:0 0 10px;font-size:22px">Turnover Services</h2>
 
-      <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:14px">
+      <!-- ✅ FIX: use grid-3 class instead of inline grid-template-columns -->
+      <div class="grid-3">
         <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
           <h3 style="margin:0 0 6px">Standard Turnover</h3>
           <p class="lead" style="font-size:15px">Perfect for hosts who want a reliable, professional reset after every guest.</p>
@@ -456,18 +466,15 @@
       setOpen(!open);
     });
 
-    // Close drawer when clicking a link inside it
     drawer.addEventListener("click", function (e) {
       const target = e.target;
       if (target && target.tagName === "A") setOpen(false);
     });
 
-    // Close on Escape
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") setOpen(false);
     });
 
-    // If resized to desktop, close drawer (prevents stuck-open state)
     window.addEventListener("resize", function () {
       if (window.matchMedia("(min-width: 721px)").matches) setOpen(false);
     });
