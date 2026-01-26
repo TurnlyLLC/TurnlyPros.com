@@ -500,7 +500,7 @@
 </script>
 
 <script>
-  // ✅ Formspree submit + success state + honeypot
+  // ✅ Formspree submit + success state + honeypot + better error visibility
   (function(){
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
@@ -510,7 +510,6 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Honeypot check: if filled, treat as spam and show success without sending
       const honeypot = form.querySelector('input[name="_gotcha"]');
       if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
         form.classList.add('hidden');
@@ -523,6 +522,7 @@
 
       try {
         const formData = new FormData(form);
+
         const res = await fetch(form.action, {
           method: 'POST',
           body: formData,
@@ -534,15 +534,43 @@
           form.classList.add('hidden');
           if(successEl) successEl.classList.remove('hidden');
           if(statusEl) statusEl.textContent = '';
-        } else {
-          if(statusEl) statusEl.textContent = 'Something went wrong. Please email admin@turnlypros.com.';
+          return;
         }
+
+        // ✅ Read actual error from Formspree
+        let msg = 'Something went wrong. Please email admin@turnlypros.com.';
+        const contentType = res.headers.get('content-type') || '';
+
+        if(contentType.includes('application/json')){
+          const data = await res.json().catch(() => null);
+          // Formspree often returns { errors: [{ message: "..." }] }
+          if(data && data.errors && data.errors.length){
+            msg = data.errors.map(e => e.message).join(' ');
+          } else if(data && data.message){
+            msg = data.message;
+          }
+        } else {
+          const text = await res.text().catch(() => '');
+          if(text && text.trim().length){
+            msg = text.slice(0, 220);
+          }
+        }
+
+        if(statusEl) statusEl.textContent = msg;
+
+        // ✅ Fallback: allow normal browser POST (sometimes works when fetch is blocked)
+        // Comment this out if you don't want fallback behavior.
+        // form.submit();
+
       } catch(err){
         if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
+        // Optional fallback:
+        // form.submit();
       }
     });
   })();
 </script>
+
 
 </body>
 </html>
