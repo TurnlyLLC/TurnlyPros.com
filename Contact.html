@@ -370,6 +370,9 @@
         </p>
 
         <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
+          <!-- ✅ Formspree compatibility: some setups require _replyto -->
+          <input type="hidden" name="_replyto" id="_replyto_hidden" />
+
           <div class="form-row">
             <div>
               <label for="name">Name</label>
@@ -377,14 +380,14 @@
             </div>
             <div>
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@email.com" required />
+              <input id="email" name="email" type="email" placeholder="you@email.com" required autocomplete="email" inputmode="email" />
             </div>
           </div>
 
           <div class="form-row">
             <div>
               <label for="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required autocomplete="tel" inputmode="tel" />
             </div>
             <div>
               <label for="city">City</label>
@@ -510,6 +513,7 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Honeypot check
       const honeypot = form.querySelector('input[name="_gotcha"]');
       if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
         form.classList.add('hidden');
@@ -517,6 +521,11 @@
         if(statusEl) statusEl.textContent = '';
         return;
       }
+
+      // ✅ Ensure _replyto exists for Formspree setups that require it
+      const emailInput = form.querySelector('#email');
+      const replyToHidden = form.querySelector('#_replyto_hidden');
+      if(emailInput && replyToHidden) replyToHidden.value = emailInput.value;
 
       if(statusEl) statusEl.textContent = 'Sending…';
 
@@ -537,13 +546,12 @@
           return;
         }
 
-        // ✅ Read actual error from Formspree
+        // Read actual error from Formspree
         let msg = 'Something went wrong. Please email admin@turnlypros.com.';
         const contentType = res.headers.get('content-type') || '';
 
         if(contentType.includes('application/json')){
           const data = await res.json().catch(() => null);
-          // Formspree often returns { errors: [{ message: "..." }] }
           if(data && data.errors && data.errors.length){
             msg = data.errors.map(e => e.message).join(' ');
           } else if(data && data.message){
@@ -558,19 +566,12 @@
 
         if(statusEl) statusEl.textContent = msg;
 
-        // ✅ Fallback: allow normal browser POST (sometimes works when fetch is blocked)
-        // Comment this out if you don't want fallback behavior.
-        // form.submit();
-
       } catch(err){
         if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
-        // Optional fallback:
-        // form.submit();
       }
     });
   })();
 </script>
-
 
 </body>
 </html>
