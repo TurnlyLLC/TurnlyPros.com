@@ -376,16 +376,23 @@
               <input id="name" name="name" type="text" placeholder="Your name" required />
             </div>
             <div>
-              <label for="contact">Email or Phone</label>
-              <input id="contact" name="contact" type="text" placeholder="you@email.com or (555) 555-5555" required />
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@email.com" required />
             </div>
           </div>
 
           <div class="form-row">
             <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" required />
+            </div>
+            <div>
               <label for="city">City</label>
               <input id="city" name="city" type="text" placeholder="Durham, Raleigh, Chapel Hill…" />
             </div>
+          </div>
+
+          <div class="form-row">
             <div>
               <label for="size">Property Size</label>
               <select id="size" name="size">
@@ -397,15 +404,16 @@
                 <option>Multiple properties / portfolio</option>
               </select>
             </div>
+            <div>
+              <label for="tier">Service Interest</label>
+              <select id="tier" name="tier">
+                <option value="">Not sure yet</option>
+                <option>Standard Turnover</option>
+                <option>Standard + Linen</option>
+                <option>Full Service Turnover Management</option>
+              </select>
+            </div>
           </div>
-
-          <label for="tier">Service Interest</label>
-          <select id="tier" name="tier">
-            <option value="">Not sure yet</option>
-            <option>Standard Turnover</option>
-            <option>Standard + Linen</option>
-            <option>Full Service Turnover Management</option>
-          </select>
 
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Share any details that help: number of properties, typical checkout/check-in windows, access method, linens, etc."></textarea>
