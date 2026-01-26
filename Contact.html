@@ -1,695 +1,10 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Turnly | Contact</title>
-  <meta name="description" content="Contact Turnly for professional short-term rental turnover services. Manual intake—fast, clear follow-up." />
-
-  <!-- External stylesheet (deployment) -->
-  <link rel="stylesheet" href="assets/styles.css" />
-
-  <!-- Inline stylesheet so preview renders correctly in edit mode (match Services/Home look) -->
-  <style>
-    :root{
-      --bg:#0b0f17;
-      --card:#101827;
-      --muted:#a9b3c7;
-      --text:#eef2ff;
-      --border:rgba(255,255,255,.10);
-      --accent:#7c5cff;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius:16px;
-      --max:1100px;
-    }
-
-    *{box-sizing:border-box}
-
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.20), transparent 60%),
-        radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.55;
-    }
-    /* ✅ DROP-IN FOOTER (CSS) — matches your design system */
-.site-footer{
-  border-top: 1px solid var(--border);
-  background:
-    radial-gradient(900px 500px at 15% 10%, rgba(124,92,255,.10), transparent 55%),
-    radial-gradient(700px 450px at 85% 20%, rgba(34,197,94,.08), transparent 55%),
-    rgba(11,15,23,.92);
-  backdrop-filter: blur(10px);
-}
-
-.footer-inner{
-  padding: 34px 0 22px;
-  display:grid;
-  grid-template-columns: 1.2fr .9fr .9fr;
-  gap: 18px;
-  align-items:start;
-}
-
-.footer-logo{
-  height:48px;
-  width:auto;
-  display:block;
-  max-width:100%;
-}
-
-.footer-tagline{
-  margin: 12px 0 0;
-  color: rgba(238,242,255,.85);
-  max-width: 52ch;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.footer-tagline-strong{
-  display:block;
-  margin-top:6px;
-  font-weight: 800;
-  color: rgba(238,242,255,.92);
-}
-
-.footer-title{
-  margin: 6px 0 10px;
-  font-size: 13px;
-  letter-spacing: .5px;
-  text-transform: uppercase;
-  color: rgba(238,242,255,.85);
-}
-
-.footer-links{
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-}
-
-.footer-links a{
-  color: rgba(238,242,255,.86);
-  font-weight: 700;
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  width: fit-content;
-}
-
-.footer-links a:hover{
-  background: rgba(255,255,255,.06);
-  border-color: rgba(255,255,255,.08);
-}
-
-.footer-cta{
-  margin-top: 4px;
-  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
-  border-color: rgba(124,92,255,.6) !important;
-  padding: 10px 12px !important;
-}
-
-.footer-cta:hover{
-  filter: brightness(1.05);
-  box-shadow: 0 10px 26px rgba(124,92,255,.35);
-}
-
-.footer-meta{
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-}
-
-.footer-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.04);
-  color: rgba(238,242,255,.86);
-  font-weight: 700;
-  font-size: 13px;
-  flex-wrap: wrap;
-  max-width: 100%;
-}
-
-.footer-pill a{
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.footer-bottom{
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 14px 0 18px;
-}
-
-.footer-bottom-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-  color: rgba(238,242,255,.72);
-  font-size: 13px;
-}
-
-.footer-bottom-links a{
-  color: rgba(238,242,255,.78);
-  font-weight: 700;
-  padding: 6px 8px;
-  border-radius: 8px;
-}
-
-.footer-bottom-links a:hover{
-  background: rgba(255,255,255,.06);
-}
-
-.footer-dot{
-  opacity:.6;
-  padding: 0 4px;
-}
-
-/* ✅ Responsive */
-@media (max-width: 900px){
-  .footer-inner{
-    grid-template-columns: 1fr;
-    padding: 26px 0 16px;
-  }
-  .footer-links a{
-    width: 100%;
-  }
-  .footer-bottom-row{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-}
-
-@media (max-width: 420px){
-  .footer-pill{
-    width: 100%;
-    border-radius: 14px;
-  }
-}
-
-
-    a{text-decoration:none;color:inherit}
-
-    /* ✅ responsive container */
-    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
-
-    /* Match homepage spacing model (padding-only between sections) */
-    .section{padding:48px 40px;margin-bottom:0}
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.7);
-      border-bottom:1px solid var(--border);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0;
-      min-height:72px;
-      gap:14px;
-    }
-
-    .brand img{height:56px;width:auto;display:block;max-width:100%}
-
-    /* Desktop menu */
-    .menu{display:flex;gap:14px;align-items:center}
-
-    .nav-link{
-      padding:10px;
-      border-radius:10px;
-      font-weight:700;
-      color:rgba(238,242,255,.88);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      white-space:nowrap;
-    }
-    .nav-link:hover{background:rgba(255,255,255,.06)}
-
-    .btn{
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      font-weight:700;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      cursor:pointer;
-      white-space:nowrap;
-      max-width:100%;
-    }
-
-    .btn-primary{
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
-      border-color: rgba(124,92,255,.6);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
-    }
-
-    /* Submit button hover + focus signal */
-    .btn-primary:hover,
-    .btn-primary:focus-visible{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 26px rgba(124,92,255,.45);
-      filter: brightness(1.05);
-    }
-
-    .btn-primary:active{
-      transform: translateY(0);
-      box-shadow: 0 6px 18px rgba(124,92,255,.35);
-    }
-
-    /* ✅ Hamburger button (hidden on desktop) */
-    .hamburger{
-      display:none;
-      width:44px;height:44px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      align-items:center;
-      justify-content:center;
-      padding:0;
-    }
-    .hamburger:hover{background:rgba(255,255,255,.08)}
-    .hamburger-lines{width:20px;height:14px;position:relative}
-    .hamburger-lines span{
-      position:absolute;left:0;right:0;height:2px;
-      background:rgba(238,242,255,.92);
-      border-radius:999px;
-      transition:transform .2s ease, top .2s ease, opacity .2s ease;
-    }
-    .hamburger-lines span:nth-child(1){top:0}
-    .hamburger-lines span:nth-child(2){top:6px}
-    .hamburger-lines span:nth-child(3){top:12px}
-
-    /* ✅ Mobile drawer */
-    .mobile-drawer{
-      display:none;
-      border-top:1px solid var(--border);
-      background: rgba(11,15,23,.88);
-      backdrop-filter: blur(10px);
-    }
-    .mobile-drawer-inner{
-      padding:12px 0 16px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .mobile-drawer a{
-      width:100%;
-      justify-content:flex-start;
-    }
-    .mobile-drawer .btn-primary{
-      justify-content:center;
-    }
-
-    /* ✅ open state */
-    header[data-menu-open="true"] .mobile-drawer{display:block;}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(3){top:6px;transform:rotate(-45deg)}
-
-    h1{font-size:42px;line-height:1.15;margin:0 0 12px}
-    h2{margin:0 0 10px;font-size:22px}
-    h3{margin:0 0 8px}
-
-    .lead{font-size:18px;color:rgba(238,242,255,.9);max-width:70ch}
-    .muted{color:var(--muted)}
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:24px;
-      align-items:start;
-    }
-
-    .card{
-      background: rgba(16,24,39,.8);
-      border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding:20px;
-    }
-
-    .divider{height:1px;background:var(--border);margin:16px 0}
-
-    /* Form */
-    label{display:block;font-weight:700;margin:12px 0 6px}
-
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      outline:none;
-    }
-
-    /* Fix dropdown readability (some browsers render options with light backgrounds) */
-    select{
-      background: rgba(16,24,39,.85);
-      color: var(--text);
-    }
-    select option{
-      background: rgba(16,24,39,.95);
-      color: var(--text);
-    }
-
-    input::placeholder, textarea::placeholder{color:rgba(238,242,255,.55)}
-    textarea{min-height:140px;resize:vertical}
-
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-    .hint{font-size:13px;color:rgba(238,242,255,.72);margin-top:8px}
-
-    .hidden{display:none !important}
-    .success-box{
-      border:1px solid rgba(124,92,255,.45);
-      background:rgba(124,92,255,.10);
-      border-radius:14px;
-      padding:14px;
-      margin-top:14px;
-    }
-    .success-title{font-weight:900;margin:0 0 6px}
-    .success-text{margin:0;color:rgba(238,242,255,.9)}
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-      color:rgba(238,242,255,.92);
-      margin:6px 10px 0 0;
-      flex-wrap:wrap;
-      max-width:100%;
-    }
-
-    /* ✅ existing breakpoint (layout stack) */
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:34px}
-      .section{padding:36px 22px}
-      .container{padding:0 22px}
-      .form-row{grid-template-columns:1fr}
-    }
-
-    /* ✅ mobile nav + hero padding */
-    @media (max-width: 720px){
-      .container{padding:0 16px;}
-      .section{padding:28px 16px;}
-
-      .brand img{height:44px;}
-
-      .menu{display:none;}
-      .hamburger{display:inline-flex;}
-
-      .btn{white-space:normal;}
-      .lead{font-size:16px;}
-
-      .hero-title-wrap{padding:0 16px !important;}
-    }
-
-    @media (max-width: 420px){
-      .btn{width:100%;}
-    }
-  </style>
-</head>
-
-<body>
-
-<header id="siteHeader" data-menu-open="false">
-  <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Turnly Home">
-      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
-    </a>
-
-    <!-- Desktop Nav -->
-    <nav class="menu" aria-label="Primary">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="Services.html" class="nav-link">Services</a>
-      <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <button
-      class="hamburger"
-      id="hamburgerBtn"
-      type="button"
-      aria-label="Open menu"
-      aria-controls="mobileDrawer"
-      aria-expanded="false"
-    >
-      <span class="hamburger-lines" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
-    </button>
-  </div>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile">
-    <div class="container mobile-drawer-inner">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="Services.html" class="nav-link">Services</a>
-      <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
-    </div>
-  </div>
-</header>
-
-<!-- Contact Hero Video (match Services/Home style) -->
-<section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
-  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
-    <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
-  </video>
-  <div class="container hero-title-wrap" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
-    <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Contact</h1>
-  </div>
-</section>
-
-<main>
-  <section class="container section">
-    <div class="grid">
-      <div>
-        <h1>Get in Touch With Turnly</h1>
-        <p class="lead">
-          Whether you manage one listing or an entire portfolio, we’re here to help you simplify turnovers and protect your guest experience.
-        </p>
-        <p class="lead" style="margin-top:10px">
-          Have a question? Need a quote? Not sure which service tier is right for you?<br/>
-          Reach out — we’ll respond quickly and clearly.
-        </p>
-
-        <div class="divider"></div>
-
-        <h2>What to Use This Form For</h2>
-        <ul>
-          <li>Requesting a service quote</li>
-          <li>Asking about service tiers</li>
-          <li>Discussing multi-property or portfolio support</li>
-          <li>Scheduling an onboarding call</li>
-          <li>General questions about how Turnly works</li>
-        </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px">If you’re ready to get started, this is the fastest way.</p>
-
-        <div class="divider"></div>
-
-        <h2>What Happens After You Contact Us</h2>
-        <ul>
-          <li>We review your message and property details</li>
-          <li>We follow up to clarify your needs (if needed)</li>
-          <li>We recommend the right service tier</li>
-          <li>We get your turnovers scheduled</li>
-        </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px"><strong>No pressure. No sales games. Just clear next steps.</strong></p>
-      </div>
-
-      <div class="card" id="contact-form">
-        <h2 style="margin:0 0 8px">Tell Us About Your Property</h2>
-        <p class="muted" style="margin:0 0 12px">
-          Manual intake (no calendar, no payment). We’ll respond with next steps.
-        </p>
-
-        <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
-          <!-- ✅ Helps Formspree reply to the sender; we'll set this from the Email field via JS -->
-          <input type="hidden" name="_replyto" id="_replyto_hidden" />
-
-          <div class="form-row">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@email.com"
-                required
-                autocomplete="email"
-                inputmode="email"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="phone">Phone</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="(555) 555-5555"
-                required
-                autocomplete="tel"
-                inputmode="tel"
-                maxlength="14"
-                pattern="\(\d{3}\)\s\d{3}-\d{4}"
-                title="Enter a valid phone number in the format (555) 555-5555"
-              />
-            </div>
-            <div>
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="Durham, Raleigh, Chapel Hill…" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="size">Property Size</label>
-              <select id="size" name="size">
-                <option value="">Select one</option>
-                <option>Studio / 1 bed</option>
-                <option>2 bed</option>
-                <option>3 bed</option>
-                <option>4+ bed</option>
-                <option>Multiple properties / portfolio</option>
-              </select>
-            </div>
-            <div>
-              <label for="tier">Service Interest</label>
-              <select id="tier" name="tier">
-                <option value="">Not sure yet</option>
-                <option>Standard Turnover</option>
-                <option>Standard + Linen</option>
-                <option>Full Service Turnover Management</option>
-              </select>
-            </div>
-          </div>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Share any details that help: number of properties, typical checkout/check-in windows, access method, linens, etc."></textarea>
-
-          <input type="hidden" name="_subject" value="Turnly Contact Form Submission" />
-
-          <!-- Honeypot (spam protection) -->
-          <div class="hidden" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <button class="btn btn-primary" type="submit" style="width:100%;margin-top:14px">Send Message</button>
-          <div class="hint">By submitting, you’re requesting a follow-up — not booking a service.</div>
-          <div id="formStatus" class="hint" aria-live="polite" style="margin-top:10px"></div>
-        </form>
-
-        <div id="formSuccess" class="success-box hidden" role="status" aria-live="polite">
-          <p class="success-title">Message sent.</p>
-          <p class="success-text">We received your details and we’ll follow up shortly. If you need to add anything, email <strong>admin@turnlypros.com</strong>.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h3>Prefer Direct Contact?</h3>
-        <div>
-          <span class="pill">Email: admin@turnlypros.com</span>
-          <span class="pill">Service Area: North Carolina</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Built for Serious Hosts</h2>
-      <p class="lead" style="font-size:16px">
-        Turnly is built for hosts who care about:
-      </p>
-      <ul>
-        <li>Cleanliness that drives reviews</li>
-        <li>Consistency that protects revenue</li>
-        <li>Systems that scale</li>
-      </ul>
-      <p class="lead" style="font-size:16px"><strong>If that sounds like you, we’d love to work together.</strong></p>
-    </div>
-  </section>
-</main>
-
-<script>
-  // ✅ Hamburger menu toggle
-  (function () {
-    const header = document.getElementById("siteHeader");
-    const btn = document.getElementById("hamburgerBtn");
-    const drawer = document.getElementById("mobileDrawer");
-
-    function setOpen(isOpen) {
-      header.setAttribute("data-menu-open", isOpen ? "true" : "false");
-      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-    }
-
-    btn.addEventListener("click", function () {
-      const open = header.getAttribute("data-menu-open") === "true";
-      setOpen(!open);
-    });
-
-    // Close drawer when clicking a link inside it
-    drawer.addEventListener("click", function (e) {
-      const target = e.target;
-      if (target && target.tagName === "A") setOpen(false);
-    });
-
-    // Close on Escape
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
-    });
-
-    // If resized to desktop, close drawer (prevents stuck-open state)
-    window.addEventListener("resize", function () {
-      if (window.matchMedia("(min-width: 721px)").matches) setOpen(false);
-    });
-  })();
-</script>
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turnly | Contact</title>
-  <meta name="description" content="Contact Turnly for professional short-term rental turnover services. Manual intake—fast, clear follow-up." />
-
-  <!-- External stylesheet (deployment) -->
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta name="description" content="Contact Turnly for professional short-term rental turnover services." />
 
   <style>
     :root{
@@ -699,16 +14,15 @@
       --text:#eef2ff;
       --border:rgba(255,255,255,.10);
       --accent:#7c5cff;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --shadow:0 12px 30px rgba(0,0,0,.35);
       --radius:16px;
       --max:1100px;
     }
 
     *{box-sizing:border-box}
-
     body{
       margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
       background:
         radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.20), transparent 60%),
         radial-gradient(900px 600px at 80% 20%, rgba(34,197,94,.12), transparent 55%),
@@ -718,35 +32,19 @@
     }
 
     a{text-decoration:none;color:inherit}
-
     .container{max-width:var(--max);margin:0 auto;padding:0 40px}
-    .section{padding:48px 40px;margin-bottom:0}
+    .section{padding:48px 40px}
 
     header{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(11,15,23,.7);
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(11,15,23,.7);
       border-bottom:1px solid var(--border);
     }
 
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:0; min-height:72px; gap:14px;
-    }
-
-    .brand img{height:56px;width:auto;display:block;max-width:100%}
-    .menu{display:flex;gap:14px;align-items:center}
-
-    .nav-link{
-      padding:10px;
-      border-radius:10px;
-      font-weight:700;
-      color:rgba(238,242,255,.88);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      white-space:nowrap;
-    }
+    .nav{display:flex;justify-content:space-between;align-items:center;min-height:72px}
+    .menu{display:flex;gap:14px}
+    .nav-link{font-weight:700;padding:10px;border-radius:10px}
     .nav-link:hover{background:rgba(255,255,255,.06)}
 
     .btn{
@@ -755,701 +53,179 @@
       border:1px solid var(--border);
       background:rgba(255,255,255,.05);
       font-weight:700;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
       cursor:pointer;
-      white-space:nowrap;
-      max-width:100%;
     }
 
     .btn-primary{
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
-      border-color: rgba(124,92,255,.6);
-      transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      background:linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
+      border-color:rgba(124,92,255,.6);
     }
 
-    .btn-primary:hover,
-    .btn-primary:focus-visible{
-      transform: translateY(-1px);
-      box-shadow: 0 10px 26px rgba(124,92,255,.45);
-      filter: brightness(1.05);
-    }
-
-    .btn-primary:active{
-      transform: translateY(0);
-      box-shadow: 0 6px 18px rgba(124,92,255,.35);
-    }
-
-    .hamburger{
-      display:none;
-      width:44px;height:44px;
-      border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      align-items:center;
-      justify-content:center;
-      padding:0;
-    }
-    .hamburger:hover{background:rgba(255,255,255,.08)}
-    .hamburger-lines{width:20px;height:14px;position:relative}
-    .hamburger-lines span{
-      position:absolute;left:0;right:0;height:2px;
-      background:rgba(238,242,255,.92);
-      border-radius:999px;
-      transition:transform .2s ease, top .2s ease, opacity .2s ease;
-    }
-    .hamburger-lines span:nth-child(1){top:0}
-    .hamburger-lines span:nth-child(2){top:6px}
-    .hamburger-lines span:nth-child(3){top:12px}
-
-    .mobile-drawer{
-      display:none;
-      border-top:1px solid var(--border);
-      background: rgba(11,15,23,.88);
-      backdrop-filter: blur(10px);
-    }
-    .mobile-drawer-inner{
-      padding:12px 0 16px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .mobile-drawer a{width:100%;justify-content:flex-start;}
-    .mobile-drawer .btn-primary{justify-content:center;}
-
-    header[data-menu-open="true"] .mobile-drawer{display:block;}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
-    header[data-menu-open="true"] .hamburger-lines span:nth-child(3){top:6px;transform:rotate(-45deg)}
-
-    h1{font-size:42px;line-height:1.15;margin:0 0 12px}
-    h2{margin:0 0 10px;font-size:22px}
-    h3{margin:0 0 8px}
-
-    .lead{font-size:18px;color:rgba(238,242,255,.9);max-width:70ch}
-    .muted{color:var(--muted)}
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:24px;
-      align-items:start;
-    }
-
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
     .card{
-      background: rgba(16,24,39,.8);
+      background:rgba(16,24,39,.8);
       border:1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:20px;
     }
 
-    .divider{height:1px;background:var(--border);margin:16px 0}
-
-    label{display:block;font-weight:700;margin:12px 0 6px}
-
-    input, select, textarea{
+    label{font-weight:700;margin-top:12px;display:block}
+    input,select,textarea{
       width:100%;
-      padding:12px 12px;
+      padding:12px;
       border-radius:12px;
       border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      outline:none;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
     }
 
-    select{
-      background: rgba(16,24,39,.85);
-      color: var(--text);
-    }
-    select option{
-      background: rgba(16,24,39,.95);
-      color: var(--text);
-    }
-
-    input::placeholder, textarea::placeholder{color:rgba(238,242,255,.55)}
-    textarea{min-height:140px;resize:vertical}
-
+    textarea{min-height:140px}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 
-    .hint{font-size:13px;color:rgba(238,242,255,.72);margin-top:8px}
+    .hint{font-size:13px;color:rgba(238,242,255,.72)}
+    .hidden{display:none}
 
-    .hidden{display:none !important}
-    .success-box{
-      border:1px solid rgba(124,92,255,.45);
-      background:rgba(124,92,255,.10);
-      border-radius:14px;
-      padding:14px;
-      margin-top:14px;
-    }
-    .success-title{font-weight:900;margin:0 0 6px}
-    .success-text{margin:0;color:rgba(238,242,255,.9)}
-
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.04);
-      font-weight:700;
-      color:rgba(238,242,255,.92);
-      margin:6px 10px 0 0;
-      flex-wrap:wrap;
-      max-width:100%;
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--border);
+      background:rgba(11,15,23,.95);
+      margin-top:40px;
     }
 
-    /* ✅ SMS consent block */
-    .consent-row{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.03);
-      margin-top:12px;
+    .footer-inner{
+      display:grid;
+      grid-template-columns:1.2fr .9fr .9fr;
+      gap:18px;
+      padding:32px 0;
     }
-    .consent-row input[type="checkbox"]{
-      width:18px;height:18px;
-      margin-top:2px;
-      accent-color: var(--accent);
-      flex:0 0 auto;
-    }
-    .consent-text{
+
+    .footer-logo{height:48px}
+    .footer-title{font-size:13px;text-transform:uppercase;opacity:.85}
+    .footer-links a{display:block;margin:8px 0;font-weight:700}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:14px 0;
       font-size:13px;
-      color: rgba(238,242,255,.85);
-      line-height:1.4;
-    }
-    .consent-text a{
-      text-decoration:underline;
+      opacity:.7;
     }
 
     @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
-      h1{font-size:34px}
-      .section{padding:36px 22px}
-      .container{padding:0 22px}
-      .form-row{grid-template-columns:1fr}
-    }
-
-    @media (max-width: 720px){
-      .container{padding:0 16px;}
-      .section{padding:28px 16px;}
-
-      .brand img{height:44px;}
-
-      .menu{display:none;}
-      .hamburger{display:inline-flex;}
-
-      .btn{white-space:normal;}
-      .lead{font-size:16px;}
-
-      .hero-title-wrap{padding:0 16px !important;}
-    }
-
-    @media (max-width: 420px){
-      .btn{width:100%;}
+      .grid,.footer-inner{grid-template-columns:1fr}
+      .container,.section{padding:24px}
     }
   </style>
 </head>
 
 <body>
 
-<header id="siteHeader" data-menu-open="false">
+<header>
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Turnly Home">
-      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
-    </a>
-
-    <!-- Desktop Nav -->
-    <nav class="menu" aria-label="Primary">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="Services.html" class="nav-link">Services</a>
-      <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+    <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly" style="height:44px">
+    <nav class="menu">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="Services.html">Services</a>
+      <a class="nav-link" href="Contact.html">Contact</a>
+      <a class="btn btn-primary" href="#contact-form">Tell Us About Your Property</a>
     </nav>
-
-    <!-- Mobile Hamburger -->
-    <button
-      class="hamburger"
-      id="hamburgerBtn"
-      type="button"
-      aria-label="Open menu"
-      aria-controls="mobileDrawer"
-      aria-expanded="false"
-    >
-      <span class="hamburger-lines" aria-hidden="true">
-        <span></span><span></span><span></span>
-      </span>
-    </button>
-  </div>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile">
-    <div class="container mobile-drawer-inner">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="Services.html" class="nav-link">Services</a>
-      <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
-    </div>
   </div>
 </header>
 
-<!-- Contact Hero Video -->
-<section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
-  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
-    <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
-  </video>
-  <div class="container hero-title-wrap" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
-    <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Contact</h1>
+<section class="section container">
+  <div class="grid">
+    <div>
+      <h1>Get in Touch With Turnly</h1>
+      <p>We’ll respond quickly and clearly.</p>
+    </div>
+
+    <div class="card" id="contact-form">
+      <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
+
+        <label>Name</label>
+        <input name="name" required>
+
+        <div class="form-row">
+          <div>
+            <label>Email</label>
+            <input name="email" type="email" required>
+          </div>
+          <div>
+            <label>Phone</label>
+            <input id="phone" name="phone" type="tel"
+              placeholder="(555) 555-5555"
+              required maxlength="14"
+              pattern="\(\d{3}\)\s\d{3}-\d{4}">
+          </div>
+        </div>
+
+        <label>Message</label>
+        <textarea name="message"></textarea>
+
+        <!-- SMS CONSENT -->
+        <label style="margin-top:12px">
+          <input type="checkbox" name="sms_consent" required>
+          I agree to receive SMS messages related to my inquiry. Message & data rates may apply.
+        </label>
+
+        <input type="hidden" name="_subject" value="Turnly Contact Form">
+
+        <button class="btn btn-primary" style="width:100%;margin-top:14px">
+          Send Message
+        </button>
+
+        <div id="formStatus" class="hint"></div>
+      </form>
+
+      <div id="formSuccess" class="hidden">
+        <strong>Message sent.</strong>
+      </div>
+    </div>
   </div>
 </section>
 
-<main>
-  <section class="container section">
-    <div class="grid">
-      <div>
-        <h1>Get in Touch With Turnly</h1>
-        <p class="lead">
-          Whether you manage one listing or an entire portfolio, we’re here to help you simplify turnovers and protect your guest experience.
-        </p>
-        <p class="lead" style="margin-top:10px">
-          Have a question? Need a quote? Not sure which service tier is right for you?<br/>
-          Reach out — we’ll respond quickly and clearly.
-        </p>
-
-        <div class="divider"></div>
-
-        <h2>What to Use This Form For</h2>
-        <ul>
-          <li>Requesting a service quote</li>
-          <li>Asking about service tiers</li>
-          <li>Discussing multi-property or portfolio support</li>
-          <li>Scheduling an onboarding call</li>
-          <li>General questions about how Turnly works</li>
-        </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px">If you’re ready to get started, this is the fastest way.</p>
-
-        <div class="divider"></div>
-
-        <h2>What Happens After You Contact Us</h2>
-        <ul>
-          <li>We review your message and property details</li>
-          <li>We follow up to clarify your needs (if needed)</li>
-          <li>We recommend the right service tier</li>
-          <li>We get your turnovers scheduled</li>
-        </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px"><strong>No pressure. No sales games. Just clear next steps.</strong></p>
-      </div>
-
-      <div class="card" id="contact-form">
-        <h2 style="margin:0 0 8px">Tell Us About Your Property</h2>
-        <p class="muted" style="margin:0 0 12px">
-          Manual intake (no calendar, no payment). We’ll respond with next steps.
-        </p>
-
-        <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
-          <!-- Helps Formspree reply to sender -->
-          <input type="hidden" name="_replyto" id="_replyto_hidden" />
-
-          <div class="form-row">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div>
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@email.com"
-                required
-                autocomplete="email"
-                inputmode="email"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="phone">Phone</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="(555) 555-5555"
-                required
-                autocomplete="tel"
-                inputmode="tel"
-                maxlength="14"
-                pattern="\(\d{3}\)\s\d{3}-\d{4}"
-                title="Enter a valid phone number in the format (555) 555-5555"
-              />
-            </div>
-            <div>
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="Durham, Raleigh, Chapel Hill…" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div>
-              <label for="size">Property Size</label>
-              <select id="size" name="size">
-                <option value="">Select one</option>
-                <option>Studio / 1 bed</option>
-                <option>2 bed</option>
-                <option>3 bed</option>
-                <option>4+ bed</option>
-                <option>Multiple properties / portfolio</option>
-              </select>
-            </div>
-            <div>
-              <label for="tier">Service Interest</label>
-              <select id="tier" name="tier">
-                <option value="">Not sure yet</option>
-                <option>Standard Turnover</option>
-                <option>Standard + Linen</option>
-                <option>Full Service Turnover Management</option>
-              </select>
-            </div>
-          </div>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Share any details that help: number of properties, typical checkout/check-in windows, access method, linens, etc."></textarea>
-
-          <input type="hidden" name="_subject" value="Turnly Contact Form Submission" />
-
-          <!-- ✅ SMS consent (optional by default) -->
-          <div class="consent-row">
-            <input id="sms_consent" name="sms_consent" type="checkbox" value="Yes" />
-            <div class="consent-text">
-              <label for="sms_consent" style="margin:0;font-weight:800;">SMS Consent (Optional)</label>
-              By checking this box, you consent to receive text messages from Turnly about your inquiry (quotes, scheduling, and service updates).
-              Message &amp; data rates may apply. Message frequency varies. Reply STOP to opt out.
-            </div>
-          </div>
-
-          <!-- Honeypot (spam protection) -->
-          <div class="hidden" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <button class="btn btn-primary" type="submit" style="width:100%;margin-top:14px">Send Message</button>
-          <div class="hint">By submitting, you’re requesting a follow-up — not booking a service.</div>
-          <div id="formStatus" class="hint" aria-live="polite" style="margin-top:10px"></div>
-        </form>
-
-        <div id="formSuccess" class="success-box hidden" role="status" aria-live="polite">
-          <p class="success-title">Message sent.</p>
-          <p class="success-text">We received your details and we’ll follow up shortly. If you need to add anything, email <strong>admin@turnlypros.com</strong>.</p>
-        </div>
-
-        <div class="divider"></div>
-
-        <h3>Prefer Direct Contact?</h3>
-        <div>
-          <span class="pill">Email: admin@turnlypros.com</span>
-          <span class="pill">Service Area: North Carolina</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Built for Serious Hosts</h2>
-      <p class="lead" style="font-size:16px">
-        Turnly is built for hosts who care about:
-      </p>
-      <ul>
-        <li>Cleanliness that drives reviews</li>
-        <li>Consistency that protects revenue</li>
-        <li>Systems that scale</li>
-      </ul>
-      <p class="lead" style="font-size:16px"><strong>If that sounds like you, we’d love to work together.</strong></p>
-    </div>
-  </section>
-</main>
-<!-- ✅ DROP-IN FOOTER (HTML) -->
-<footer class="site-footer" role="contentinfo">
+<footer>
   <div class="container footer-inner">
-    <div class="footer-col footer-brand">
-      <img class="footer-logo" src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
-      <p class="footer-tagline">
-        Professional short-term rental turnovers built for serious hosts.
-        <span class="footer-tagline-strong">Reliable. Documented. Scalable.</span>
-      </p>
+    <div>
+      <img class="footer-logo" src="https://i.imgur.com/lvkV9Kk.png">
+      <p>Professional STR turnovers built for serious hosts.</p>
     </div>
 
-    <div class="footer-col">
-      <h4 class="footer-title">Quick Links</h4>
-      <nav class="footer-links" aria-label="Footer">
+    <div>
+      <div class="footer-title">Quick Links</div>
+      <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="Services.html">Services</a>
         <a href="Contact.html">Contact</a>
-        <a href="Contact.html#contact-form" class="footer-cta">Tell Us About Your Property</a>
-      </nav>
+      </div>
     </div>
 
-    <div class="footer-col">
-      <h4 class="footer-title">Contact</h4>
-      <div class="footer-meta">
-        <div class="footer-pill">Email: <a href="mailto:admin@turnlypros.com">admin@turnlypros.com</a></div>
-        <div class="footer-pill">Service Area: North Carolina</div>
-        <div class="footer-pill">Hours: Responsive scheduling</div>
-      </div>
+    <div>
+      <div class="footer-title">Contact</div>
+      <p>admin@turnlypros.com<br>North Carolina</p>
     </div>
   </div>
 
   <div class="container footer-bottom">
-    <div class="footer-bottom-row">
-      <span>© <span id="footerYear"></span> Turnly. All rights reserved.</span>
-      <span class="footer-bottom-links">
-        <a href="Contact.html">Support</a>
-        <span class="footer-dot">•</span>
-        <a href="Contact.html#contact-form">Get a Quote</a>
-      </span>
-    </div>
+    © <span id="year"></span> Turnly. All rights reserved.
   </div>
-
-  <script>
-    // ✅ Auto year
-    (function(){
-      var y = document.getElementById('footerYear');
-      if(y) y.textContent = new Date().getFullYear();
-    })();
-  </script>
 </footer>
 
 <script>
-  // ✅ Hamburger menu toggle
-  (function () {
-    const header = document.getElementById("siteHeader");
-    const btn = document.getElementById("hamburgerBtn");
-    const drawer = document.getElementById("mobileDrawer");
+  document.getElementById("year").textContent=new Date().getFullYear();
 
-    function setOpen(isOpen) {
-      header.setAttribute("data-menu-open", isOpen ? "true" : "false");
-      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      btn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-    }
-
-    btn.addEventListener("click", function () {
-      const open = header.getAttribute("data-menu-open") === "true";
-      setOpen(!open);
-    });
-
-    drawer.addEventListener("click", function (e) {
-      const target = e.target;
-      if (target && target.tagName === "A") setOpen(false);
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") setOpen(false);
-    });
-
-    window.addEventListener("resize", function () {
-      if (window.matchMedia("(min-width: 721px)").matches) setOpen(false);
-    });
-  })();
-</script>
-
-<script>
-  // ✅ Phone normalization + formatting (handles +1 autofill)
-  (function () {
-    const phone = document.getElementById('phone');
-    if (!phone) return;
-
-    function normalizeAndFormat(value) {
-      if (!value) return '';
-      let digits = value.replace(/\D/g, '');
-
-      // Strip leading country code (US/CA)
-      if (digits.length === 11 && digits.startsWith('1')) digits = digits.slice(1);
-
-      digits = digits.slice(0, 10);
-
-      const a = digits.slice(0, 3);
-      const b = digits.slice(3, 6);
-      const c = digits.slice(6, 10);
-
-      if (digits.length <= 3) return a ? `(${a}` : '';
-      if (digits.length <= 6) return `(${a}) ${b}`;
-      return `(${a}) ${b}-${c}`;
-    }
-
-    phone.addEventListener('input', () => {
-      phone.value = normalizeAndFormat(phone.value);
-    });
-
-    phone.addEventListener('blur', () => {
-      phone.value = normalizeAndFormat(phone.value);
-      const digits = phone.value.replace(/\D/g, '');
-      if (digits.length > 0 && digits.length < 10) phone.value = '';
-    });
-
-    window.addEventListener('load', () => {
-      if (phone.value) phone.value = normalizeAndFormat(phone.value);
-    });
-  })();
-</script>
-
-<script>
-  // ✅ Formspree submit + success state + honeypot + better error visibility
-  (function(){
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-    const successEl = document.getElementById('formSuccess');
-    const replyToHidden = document.getElementById('_replyto_hidden');
-    if(!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const honeypot = form.querySelector('input[name="_gotcha"]');
-      if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
-        form.classList.add('hidden');
-        if(successEl) successEl.classList.remove('hidden');
-        if(statusEl) statusEl.textContent = '';
-        return;
-      }
-
-      // Ensure _replyto exists (some configs expect it)
-      const emailInput = form.querySelector('#email');
-      if(replyToHidden && emailInput) replyToHidden.value = emailInput.value;
-
-      if(statusEl) statusEl.textContent = 'Sending…';
-
-      try {
-        const formData = new FormData(form);
-
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if(res.ok){
-          form.reset();
-          form.classList.add('hidden');
-          if(successEl) successEl.classList.remove('hidden');
-          if(statusEl) statusEl.textContent = '';
-          return;
-        }
-
-        let msg = 'Something went wrong. Please email admin@turnlypros.com.';
-        const contentType = res.headers.get('content-type') || '';
-
-        if(contentType.includes('application/json')){
-          const data = await res.json().catch(() => null);
-          if(data && data.errors && data.errors.length){
-            msg = data.errors.map(e => e.message).join(' ');
-          } else if(data && data.message){
-            msg = data.message;
-          }
-        } else {
-          const text = await res.text().catch(() => '');
-          if(text && text.trim().length){
-            msg = text.slice(0, 220);
-          }
-        }
-
-        if(statusEl) statusEl.textContent = msg;
-
-      } catch(err){
-        if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
-      }
-    });
-  })();
+  // Phone formatting + ignore +1
+  const phone=document.getElementById("phone");
+  function format(v){
+    let d=v.replace(/\D/g,'');
+    if(d.length===11&&d.startsWith('1'))d=d.slice(1);
+    d=d.slice(0,10);
+    if(d.length<4)return d;
+    if(d.length<7)return`(${d.slice(0,3)}) ${d.slice(3)}`;
+    return`(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+  }
+  phone.addEventListener("input",()=>phone.value=format(phone.value));
+  window.addEventListener("load",()=>phone.value=format(phone.value));
 </script>
 
 </body>
 </html>
-
-
-<script>
-  // ✅ Formspree submit + success state + honeypot + better error visibility
-  (function(){
-    const form = document.getElementById('contactForm');
-    const statusEl = document.getElementById('formStatus');
-    const successEl = document.getElementById('formSuccess');
-    const replyToHidden = document.getElementById('_replyto_hidden');
-    if(!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      // Honeypot check
-      const honeypot = form.querySelector('input[name="_gotcha"]');
-      if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
-        form.classList.add('hidden');
-        if(successEl) successEl.classList.remove('hidden');
-        if(statusEl) statusEl.textContent = '';
-        return;
-      }
-
-      // ✅ Ensure _replyto exists (some Formspree configs require it)
-      const emailInput = form.querySelector('#email');
-      if(replyToHidden && emailInput) replyToHidden.value = emailInput.value;
-
-      // ✅ Trim phone value (should already be formatted)
-      const phoneInput = form.querySelector('#phone');
-      if(phoneInput) phoneInput.value = phoneInput.value.trim();
-
-      if(statusEl) statusEl.textContent = 'Sending…';
-
-      try {
-        const formData = new FormData(form);
-
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if(res.ok){
-          form.reset();
-          form.classList.add('hidden');
-          if(successEl) successEl.classList.remove('hidden');
-          if(statusEl) statusEl.textContent = '';
-          return;
-        }
-
-        // ✅ Read actual error from Formspree
-        let msg = 'Something went wrong. Please email admin@turnlypros.com.';
-        const contentType = res.headers.get('content-type') || '';
-
-        if(contentType.includes('application/json')){
-          const data = await res.json().catch(() => null);
-          // Formspree often returns { errors: [{ message: "..." }] }
-          if(data && data.errors && data.errors.length){
-            msg = data.errors.map(e => e.message).join(' ');
-          } else if(data && data.message){
-            msg = data.message;
-          }
-        } else {
-          const text = await res.text().catch(() => '');
-          if(text && text.trim().length){
-            msg = text.slice(0, 220);
-          }
-        }
-
-        if(statusEl) statusEl.textContent = msg;
-
-      } catch(err){
-        if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
-      }
-    });
-  })();
-</script>
-
-</body>
-</html>
-```
