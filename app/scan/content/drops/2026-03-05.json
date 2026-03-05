@@ -1,0 +1,18 @@
+// content/drops/2026-03-05.json
+{
+  "date": "2026-03-05",
+  "number": 64,
+  "title": "Drop #64 — The Missing Step",
+  "free": {
+    "puzzle": "PUZZLE:\n\n(put the daily puzzle here)\n\nClue: ...",
+    "sharePrompt": "If you solve it, text this QR to a friend and see if they can beat your time."
+  },
+  "paid": {
+    "answerKey": "ANSWER KEY:\n\n1) ...\n2) ...\n\nFinal answer: ...",
+    "funFact": "FUN FACT:\n\n(put your fun fact here)"
+  },
+  "subscriber": {
+    "emailTeaser": "Tomorrow’s email drop is going to be a ‘two-layer’ puzzle.",
+    "bonus": "SUBSCRIBER BONUS:\n\n(put bonus content here)"
+  }
+}
