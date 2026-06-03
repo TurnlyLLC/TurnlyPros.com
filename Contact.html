@@ -6,10 +6,8 @@
   <title>Contact Turnly | Commercial Cleaning Quote</title>
   <meta name="description" content="Contact Turnly for professional commercial cleaning services for offices, childcare centers, churches, apartment communities, leasing offices, and commercial facilities." />
 
-  <!-- External stylesheet (deployment) -->
   <link rel="stylesheet" href="assets/styles.css" />
 
-  <!-- Inline stylesheet so preview renders correctly in edit mode (match Services/Home look) -->
   <style>
     :root{
       --bg:#0b0f17;
@@ -39,7 +37,6 @@
     a{text-decoration:none;color:inherit}
 
     .container{max-width:var(--max);margin:0 auto;padding:0 40px}
-
     .section{padding:48px 40px;margin-bottom:0}
 
     header{
@@ -61,7 +58,6 @@
     }
 
     .brand img{height:56px;width:auto;display:block;max-width:100%}
-
     .menu{display:flex;gap:14px;align-items:center}
 
     .nav-link{
@@ -205,7 +201,6 @@
     textarea{min-height:140px;resize:vertical}
 
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
     .hint{font-size:13px;color:rgba(238,242,255,.72);margin-top:8px}
 
     .hidden{display:none !important}
@@ -273,15 +268,11 @@
     @media (max-width: 720px){
       .container{padding:0 16px;}
       .section{padding:28px 16px;}
-
       .brand img{height:44px;}
-
       .menu{display:none;}
       .hamburger{display:inline-flex;}
-
       .btn{white-space:normal;}
       .lead{font-size:16px;}
-
       .hero-title-wrap{padding:0 16px !important;}
     }
 
@@ -356,46 +347,10 @@
       border-color: rgba(255,255,255,.08);
     }
 
-    .footer-cta{
-      margin-top: 4px;
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.7));
-      border: 1px solid rgba(124,92,255,.6);
-      padding: 10px 12px;
-      border-radius: 12px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .footer-cta:hover{
-      filter: brightness(1.05);
-      box-shadow: 0 10px 26px rgba(124,92,255,.35);
-    }
-
     .footer-meta{
       display:flex;
       flex-direction:column;
       gap: 10px;
-    }
-
-    .footer-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.04);
-      color: rgba(238,242,255,.86);
-      font-weight: 700;
-      font-size: 13px;
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
-
-    .footer-pill a{
-      text-decoration: underline;
-      text-underline-offset: 2px;
     }
 
     .footer-bottom{
@@ -439,13 +394,6 @@
         align-items:flex-start;
       }
     }
-
-    @media (max-width: 420px){
-      .footer-pill{
-        width: 100%;
-        border-radius: 14px;
-      }
-    }
   </style>
 </head>
 
@@ -457,7 +405,6 @@
       <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
     </a>
 
-    <!-- Desktop Nav -->
     <nav class="menu" aria-label="Primary">
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
@@ -465,7 +412,6 @@
       <a href="#contact-form" class="btn btn-primary">Request a Quote</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
     <button
       class="hamburger"
       id="hamburgerBtn"
@@ -480,7 +426,6 @@
     </button>
   </div>
 
-  <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobile">
     <div class="container mobile-drawer-inner">
       <a href="index.html" class="nav-link">Home</a>
@@ -491,7 +436,6 @@
   </div>
 </header>
 
-<!-- Contact Hero Video -->
 <section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
   <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
     <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
@@ -525,7 +469,6 @@
           <li>Sharing access, schedule, or service details</li>
           <li>General questions about how Turnly works</li>
         </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px">If you’re ready to improve the cleanliness and consistency of your facility, this is the fastest way to start.</p>
 
         <div class="divider"></div>
 
@@ -546,7 +489,7 @@
           Manual intake only. We’ll review your details and respond with next steps.
         </p>
 
-        <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
+        <form id="contactForm">
           <div class="form-row">
             <div>
               <label for="name">Name</label>
@@ -610,7 +553,6 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Share any details that help: facility type, square footage, number of restrooms, service frequency, preferred cleaning days, access details, supplies onsite, or any special cleaning needs."></textarea>
 
-          <!-- SMS CONSENT (required) -->
           <div class="consent">
             <label for="smsConsent">
               <input id="smsConsent" name="sms_consent" type="checkbox" required />
@@ -624,9 +566,6 @@
             </label>
           </div>
 
-          <input type="hidden" name="_subject" value="Turnly Commercial Cleaning Inquiry" />
-
-          <!-- Honeypot (spam protection) -->
           <div class="hidden" aria-hidden="true">
             <label for="company">Company</label>
             <input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
@@ -674,7 +613,6 @@
   </section>
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-col footer-brand">
@@ -715,7 +653,6 @@
 </footer>
 
 <script>
-  // Footer year
   (function(){
     var y = document.getElementById('footerYear');
     if(y) y.textContent = new Date().getFullYear();
@@ -723,7 +660,6 @@
 </script>
 
 <script>
-  // Hamburger menu toggle
   (function () {
     const header = document.getElementById("siteHeader");
     const btn = document.getElementById("hamburgerBtn");
@@ -756,7 +692,6 @@
 </script>
 
 <script>
-  // Phone formatting: (555) 555-5555 AND ignore +1 autofill
   (function(){
     const phone = document.getElementById('phone');
     if(!phone) return;
@@ -789,18 +724,6 @@
       phone.value = formatPhone(phone.value);
     });
 
-    const form = document.getElementById('contactForm');
-    form && form.addEventListener('submit', (e) => {
-      if(!isValidPhone(phone.value)){
-        e.preventDefault();
-        phone.focus();
-        phone.setCustomValidity('Please enter a valid 10-digit phone number.');
-        phone.reportValidity();
-      } else {
-        phone.setCustomValidity('');
-      }
-    });
-
     phone.addEventListener('blur', () => {
       if(phone.value.trim().length === 0) return;
       if(!isValidPhone(phone.value)){
@@ -812,16 +735,41 @@
   })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
-  // Formspree submit + success state + honeypot + readable error messages
+  const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+  const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
   (function(){
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
     const successEl = document.getElementById('formSuccess');
+
     if(!form) return;
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const phone = document.getElementById('phone');
+      const phoneDigits = phone.value.replace(/\D/g,'');
+      const validPhone = phoneDigits.length === 10 || (phoneDigits.length === 11 && phoneDigits.startsWith('1'));
+
+      if(!validPhone){
+        phone.focus();
+        phone.setCustomValidity('Please enter a valid 10-digit phone number.');
+        phone.reportValidity();
+        return;
+      } else {
+        phone.setCustomValidity('');
+      }
+
+      if(!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
 
       const honeypot = form.querySelector('input[name="_gotcha"]');
       if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
@@ -831,45 +779,40 @@
         return;
       }
 
+      const smsConsent = document.getElementById('smsConsent');
+      if(!smsConsent || !smsConsent.checked){
+        if(statusEl) statusEl.textContent = 'Please agree to receive SMS messages related to your inquiry.';
+        return;
+      }
+
       if(statusEl) statusEl.textContent = 'Sending…';
 
-      try {
-        const formData = new FormData(form);
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        city: document.getElementById('city').value.trim(),
+        facility_type: document.getElementById('size').value,
+        service_interest: document.getElementById('tier').value,
+        message: document.getElementById('message').value.trim(),
+        sms_consent: smsConsent.checked,
+        source: 'website_contact_form'
+      };
 
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
+      const { error } = await supabaseClient
+        .from('commercial_leads')
+        .insert(payload);
 
-        if(res.ok){
-          form.reset();
-          form.classList.add('hidden');
-          if(successEl) successEl.classList.remove('hidden');
-          if(statusEl) statusEl.textContent = '';
-          return;
-        }
-
-        let msg = 'Something went wrong. Please email admin@turnlypros.com.';
-        const contentType = res.headers.get('content-type') || '';
-
-        if(contentType.includes('application/json')){
-          const data = await res.json().catch(() => null);
-          if(data && data.errors && data.errors.length){
-            msg = data.errors.map(e => e.message).join(' ');
-          } else if(data && data.message){
-            msg = data.message;
-          }
-        } else {
-          const text = await res.text().catch(() => '');
-          if(text && text.trim().length) msg = text.slice(0, 220);
-        }
-
-        if(statusEl) statusEl.textContent = msg;
-
-      } catch(err){
-        if(statusEl) statusEl.textContent = 'Network error. Please email admin@turnlypros.com.';
+      if(error){
+        console.error(error);
+        if(statusEl) statusEl.textContent = 'Something went wrong. Please email admin@turnlypros.com.';
+        return;
       }
+
+      form.reset();
+      form.classList.add('hidden');
+      if(successEl) successEl.classList.remove('hidden');
+      if(statusEl) statusEl.textContent = '';
     });
   })();
 </script>
