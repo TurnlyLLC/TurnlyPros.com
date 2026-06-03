@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turnly | STR Turnover Cleaning</title>
-  <meta name="description" content="Turnly provides checklist-driven, photo-documented STR turnover cleaning for hosts and portfolio operators." />
+  <title>Turnly | Commercial Cleaning Services</title>
+  <meta name="description" content="Turnly provides reliable, checklist-driven commercial cleaning services for businesses, childcare centers, churches, offices, apartment communities, and shared facilities." />
 
   <!-- External stylesheet (for real deployment) -->
   <link rel="stylesheet" href="assets/styles.css" />
@@ -37,14 +37,12 @@
 
     a{text-decoration:none;color:inherit}
 
-    /* ✅ responsive container */
     .container{
       max-width:var(--max);
       margin:0 auto;
       padding:0 40px;
     }
 
-    /* Standard body section wrapper */
     .section{ padding:48px 40px; }
     .section + .section{ padding-top:0; }
 
@@ -67,7 +65,6 @@
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .brand img{height:56px;width:auto;display:block;max-width:100%}
 
-    /* Desktop menu */
     .menu{display:flex;gap:14px;align-items:center}
 
     .nav-link{
@@ -104,7 +101,6 @@
       border-color: rgba(124,92,255,.6);
     }
 
-    /* ✅ Hamburger button (hidden on desktop) */
     .hamburger{
       display:none;
       width:44px;height:44px;
@@ -129,7 +125,6 @@
     .hamburger-lines span:nth-child(2){top:6px}
     .hamburger-lines span:nth-child(3){top:12px}
 
-    /* ✅ Mobile drawer */
     .mobile-drawer{
       display:none;
       border-top:1px solid var(--border);
@@ -150,7 +145,6 @@
       justify-content:center;
     }
 
-    /* ✅ toggle open state */
     header[data-menu-open="true"] .mobile-drawer{display:block;}
     header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
     header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
@@ -168,10 +162,16 @@
       align-items:start;
     }
 
-    /* ✅ Services cards grid (3-up on desktop, stacks on mobile) */
     .grid-3{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      align-items:stretch;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
       gap:14px;
       align-items:stretch;
     }
@@ -189,11 +189,11 @@
 
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr} /* ✅ stack services cards */
+      .grid-3{grid-template-columns:1fr}
+      .grid-4{grid-template-columns:1fr}
       h1{font-size:34px}
     }
 
-    /* ✅ Mobile: show hamburger, hide desktop menu, tighten padding */
     @media (max-width: 720px){
       .container{padding:0 16px;}
       .section{padding:28px 16px;}
@@ -215,9 +215,6 @@
       .btn{white-space:normal;}
     }
 
-    /* =========================
-       ✅ FOOTER (matches design)
-       ========================= */
     .site-footer{
       border-top: 1px solid var(--border);
       background:
@@ -391,7 +388,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="Contact.html#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+      <a href="Contact.html#contact-form" class="btn btn-primary">Request a Quote</a>
     </nav>
 
     <!-- Mobile Hamburger -->
@@ -415,7 +412,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="Contact.html#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+      <a href="Contact.html#contact-form" class="btn btn-primary">Request a Quote</a>
     </div>
   </div>
 </header>
@@ -438,24 +435,25 @@
   <section class="container section">
     <div class="grid">
       <div>
-        <h1>Turnovers Done Right. Every Time.</h1>
+        <h1>Commercial Cleaning You Can Count On.</h1>
         <p class="lead">
-          <strong>Professional short-term rental turnovers built for serious hosts.</strong>
-          Turnly handles the cleaning, resetting, and readiness of your property so every guest walks into a five-star experience — without last-minute stress, missed details, or unreliable cleaners.
+          <strong>Reliable commercial cleaning services for businesses, childcare centers, churches, offices, apartment communities, and shared facilities.</strong>
+          Turnly helps keep your property clean, professional, and ready for the people who depend on it every day.
         </p>
-        <p class="lead" style="margin-top:10px"><strong>You host. We handle the rest.</strong></p>
+        <p class="lead" style="margin-top:10px"><strong>You focus on running your business. We handle the cleaning.</strong></p>
 
         <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-          <a href="Contact.html#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+          <a href="Contact.html#contact-form" class="btn btn-primary">Request a Quote</a>
         </div>
 
         <div style="margin-top:18px;color:rgba(238,242,255,.9)">
           <ul style="list-style:none;padding-left:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px">
-            <li>✔ Built exclusively for short-term rentals</li>
-            <li>✔ Photo-documented cleans</li>
-            <li>✔ Consistent, trained teams</li>
-            <li>✔ Reliable scheduling & fast response</li>
-            <li>✔ Scalable for single listings or portfolios</li>
+            <li>✔ Reliable recurring cleaning services</li>
+            <li>✔ Detailed quality control inspections</li>
+            <li>✔ Photo-documented accountability</li>
+            <li>✔ Flexible service schedules</li>
+            <li>✔ Responsive communication</li>
+            <li>✔ Built for growing businesses</li>
           </ul>
         </div>
       </div>
@@ -463,19 +461,21 @@
       <div class="card">
         <h3>What Turnly Does</h3>
         <p class="lead" style="font-size:15px">
-          Turnly is a <strong>full-service short-term rental turnover company</strong>. That means we don’t just clean — we reset your property for the next guest.
+          Turnly provides recurring commercial cleaning services designed to help businesses maintain clean, healthy, and professional environments.
         </p>
         <ul>
-          <li>Complete top-to-bottom turnover clean</li>
-          <li>Bathroom and kitchen sanitization</li>
-          <li>Floor care (vacuuming & mopping)</li>
+          <li>Office cleaning</li>
+          <li>Daycare & childcare cleaning</li>
+          <li>Church cleaning</li>
+          <li>Leasing office cleaning</li>
+          <li>Apartment common area cleaning</li>
+          <li>Restroom sanitization</li>
+          <li>Floor care</li>
           <li>Trash removal</li>
-          <li>Restocking check (if applicable)</li>
-          <li>Bed resets & linen handling (when selected)</li>
-          <li>Final walkthrough</li>
-          <li>Photo documentation before and after</li>
+          <li>Touchpoint disinfection</li>
+          <li>Photo-documented quality assurance</li>
         </ul>
-        <p class="lead" style="font-size:15px;margin-top:10px"><strong>Your property is guest-ready — not “mostly clean.”</strong></p>
+        <p class="lead" style="font-size:15px;margin-top:10px"><strong>Consistent service. Professional results. Reliable communication.</strong></p>
       </div>
     </div>
   </section>
@@ -483,52 +483,53 @@
   <!-- THE PROBLEM (RELATABLE PAIN) -->
   <section class="container section">
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:22px">Hosting shouldn’t feel this hard.</h2>
+      <h2 style="margin:0 0 10px;font-size:22px">Managing a Facility Is Hard Enough.</h2>
       <p class="lead" style="font-size:16px">
-        If you manage a short-term rental, you’ve probably dealt with:
+        Many businesses struggle with:
       </p>
       <ul>
-        <li>Cleaners canceling or showing up late</li>
-        <li>Inconsistent quality from one turnover to the next</li>
-        <li>Missed details that lead to bad reviews</li>
-        <li>Scrambling between check-out and check-in</li>
-        <li>Juggling texts, payments, and schedules across multiple listings</li>
+        <li>Unreliable cleaning vendors</li>
+        <li>Missed cleaning tasks</li>
+        <li>Poor communication</li>
+        <li>Inconsistent service quality</li>
+        <li>Health and sanitation concerns</li>
+        <li>Having to constantly follow up on cleaning issues</li>
       </ul>
       <p class="lead" style="font-size:16px;margin-top:10px">
-        Most cleaning companies aren’t built for short-term rentals — and it shows.
+        A cleaning company should reduce your workload — not create more of it.
       </p>
-      <p class="lead" style="font-size:16px;margin-top:10px"><strong>Turnly was built from day one for STR turnovers.</strong></p>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>That's why Turnly focuses on accountability, communication, and consistency.</strong></p>
     </div>
   </section>
 
   <!-- DIFFERENTIATION (THIS IS WHERE YOU WIN) -->
   <section class="container section">
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:22px">Why Hosts Choose Turnly</h2>
+      <h2 style="margin:0 0 10px;font-size:22px">Why Businesses Choose Turnly</h2>
 
-      <h3 style="margin:14px 0 6px">We’re Not a Marketplace. We’re an Operator.</h3>
+      <h3 style="margin:14px 0 6px">Consistency You Can Depend On</h3>
       <p class="lead" style="font-size:16px">
-        You’re not hiring random cleaners. You’re working with <strong>Turnly-trained teams</strong>, standardized processes, and documented results.
+        Our cleaning teams follow documented procedures and detailed checklists to ensure service remains consistent visit after visit.
       </p>
 
-      <h3 style="margin:14px 0 6px">Consistency Over Convenience</h3>
+      <h3 style="margin:14px 0 6px">Quality Assurance</h3>
       <p class="lead" style="font-size:16px">
-        Anyone can offer a cheap clean. We deliver <strong>repeatable quality</strong> that protects your reviews and your revenue.
+        Regular inspections and photo documentation help ensure work is completed to our standards.
       </p>
 
-      <h3 style="margin:14px 0 6px">Built for Scale</h3>
+      <h3 style="margin:14px 0 6px">Responsive Communication</h3>
       <p class="lead" style="font-size:16px">
-        Whether you manage <strong>one listing or twenty</strong>, our systems are designed to grow with you — without sacrificing quality.
+        Questions, concerns, or special requests are addressed quickly and professionally.
       </p>
 
-      <h3 style="margin:14px 0 6px">Photo-Documented Accountability</h3>
+      <h3 style="margin:14px 0 6px">Flexible Scheduling</h3>
       <p class="lead" style="font-size:16px">
-        Every clean is documented. You know exactly what was done — no guessing, no excuses.
+        Daily, weekly, and customized cleaning schedules are available to fit your facility's needs.
       </p>
 
-      <h3 style="margin:14px 0 6px">We Respect Your Calendar</h3>
+      <h3 style="margin:14px 0 6px">Built To Grow With You</h3>
       <p class="lead" style="font-size:16px">
-        Turnovers are scheduled around real check-in/check-out windows, not “whenever the cleaner gets there.”
+        Whether you manage one location or multiple facilities, Turnly is built to scale alongside your organization.
       </p>
     </div>
   </section>
@@ -536,28 +537,34 @@
   <!-- SERVICES / PACKAGES -->
   <section class="container section">
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:22px">Turnover Services</h2>
+      <h2 style="margin:0 0 10px;font-size:22px">Commercial Cleaning Services</h2>
 
-      <!-- ✅ FIX: use grid-3 class (stacks on mobile) -->
-      <div class="grid-3">
+      <div class="grid-4">
         <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
-          <h3 style="margin:0 0 6px">Standard Turnover</h3>
-          <p class="lead" style="font-size:15px">Perfect for hosts who want a reliable, professional reset after every guest.</p>
+          <h3 style="margin:0 0 6px">Office Cleaning</h3>
+          <p class="lead" style="font-size:15px">Routine cleaning for offices, administrative spaces, conference rooms, and employee areas.</p>
         </div>
+
         <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
-          <h3 style="margin:0 0 6px">Turnover + Linen Service</h3>
-          <p class="lead" style="font-size:15px">We handle stripping, replacing, and managing linens so you never worry about laundry or missing sets.</p>
+          <h3 style="margin:0 0 6px">Childcare & Educational Facilities</h3>
+          <p class="lead" style="font-size:15px">Cleaning and sanitization services designed for daycare centers, classrooms, and learning environments.</p>
         </div>
+
         <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
-          <h3 style="margin:0 0 6px">Portfolio & Multi-Listing Support</h3>
-          <p class="lead" style="font-size:15px">Centralized scheduling, consistent pricing, and dependable teams for hosts managing multiple properties.</p>
+          <h3 style="margin:0 0 6px">Churches & Community Facilities</h3>
+          <p class="lead" style="font-size:15px">Professional cleaning for sanctuaries, fellowship halls, classrooms, and shared gathering spaces.</p>
+        </div>
+
+        <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+          <h3 style="margin:0 0 6px">Apartment Communities</h3>
+          <p class="lead" style="font-size:15px">Leasing offices, model units, fitness centers, clubhouses, and common areas.</p>
         </div>
       </div>
 
-      <p class="lead" style="font-size:16px;margin-top:12px"><em>Not sure what you need? We’ll help you choose the right setup.</em></p>
+      <p class="lead" style="font-size:16px;margin-top:12px"><em>Not sure what your facility needs? We’ll help you build the right cleaning plan.</em></p>
 
       <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
-        <a href="Contact.html#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+        <a href="Contact.html#contact-form" class="btn btn-primary">Request a Quote</a>
       </div>
     </div>
   </section>
@@ -567,21 +574,21 @@
     <div class="card">
       <h2 style="margin:0 0 10px;font-size:22px">How Turnly Works</h2>
       <ol style="margin:10px 0 0;padding-left:18px">
-        <li style="margin:8px 0"><strong>Tell Us About Your Property</strong> — Share your listing details with us.</li>
-        <li style="margin:8px 0"><strong>We Schedule the Turnover</strong> — We align with your booking calendar and access details.</li>
-        <li style="margin:8px 0"><strong>We Execute the Clean</strong> — Trained teams follow our standardized turnover checklist.</li>
-        <li style="margin:8px 0"><strong>You Get Confirmation</strong> — Photo documentation confirms your property is guest-ready.</li>
+        <li style="margin:8px 0"><strong>Request a Walkthrough</strong> — We learn about your facility, cleaning requirements, access details, and service schedule.</li>
+        <li style="margin:8px 0"><strong>Receive a Custom Quote</strong> — Every facility receives a customized scope of work and service plan.</li>
+        <li style="margin:8px 0"><strong>Service Begins</strong> — Our team performs cleaning according to the agreed schedule and checklist.</li>
+        <li style="margin:8px 0"><strong>Ongoing Quality Assurance</strong> — Regular inspections and communication help ensure consistent results.</li>
       </ol>
-      <p class="lead" style="font-size:16px;margin-top:10px"><strong>That’s it. No chasing cleaners. No stress.</strong></p>
+      <p class="lead" style="font-size:16px;margin-top:10px"><strong>Simple process. Clear expectations. Reliable service.</strong></p>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF (PLACEHOLDER) -->
+  <!-- SOCIAL PROOF / BRAND POSITIONING -->
   <section class="container section">
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:22px">Built for Hosts Who Care About Reviews</h2>
+      <h2 style="margin:0 0 10px;font-size:22px">Built for Businesses That Need Reliability</h2>
       <p class="lead" style="font-size:16px">
-        Turnly is trusted by hosts who understand that cleanliness drives reviews, reviews drive bookings, and bookings drive revenue.
+        A clean facility impacts employee satisfaction, customer perception, health standards, and overall professionalism. Turnly helps organizations maintain spaces they can be proud of.
       </p>
       <p class="lead" style="font-size:16px"><em>(Insert testimonials, reviews, or early client quotes here as they come in.)</em></p>
     </div>
@@ -590,33 +597,33 @@
   <!-- STRONG CTA (END) -->
   <section class="container section">
     <div class="card">
-      <h2 style="margin:0 0 10px;font-size:22px">Ready to Stop Worrying About Turnovers?</h2>
+      <h2 style="margin:0 0 10px;font-size:22px">Ready for a More Reliable Cleaning Partner?</h2>
       <p class="lead" style="font-size:16px">
-        If you’re tired of unreliable cleaners, inconsistent results, and last-minute panic — <strong>Turnly is built for you.</strong>
+        Whether you manage a daycare, church, office, apartment community, or commercial facility, Turnly can build a cleaning program tailored to your needs.
       </p>
       <p class="lead" style="font-size:16px">
-        Let us handle the turnovers, so you can focus on growing your hosting business.
+        Let's create a cleaning plan that keeps your facility looking its best.
       </p>
 
       <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
-        <a href="Contact.html#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+        <a href="Contact.html#contact-form" class="btn btn-primary">Request a Quote</a>
       </div>
 
       <p class="lead" style="font-size:14px;margin-top:14px;color:rgba(238,242,255,.8)">
-        Turnly — professional short-term rental turnovers, done right.
+        Turnly — professional commercial cleaning services, done right.
       </p>
     </div>
   </section>
 </main>
 
-<!-- ✅ FOOTER (same as Services/Contact) -->
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-col footer-brand">
       <img class="footer-logo" src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
       <p class="footer-tagline">
-        Professional short-term rental turnovers built for serious hosts.
-        <span class="footer-tagline-strong">Reliable. Documented. Scalable.</span>
+        Professional commercial cleaning services for businesses and facilities.
+        <span class="footer-tagline-strong">Reliable. Accountable. Consistent.</span>
       </p>
     </div>
 
@@ -649,7 +656,7 @@
   </div>
 </footer>
 
-<!-- ✅ Footer year -->
+<!-- Footer year -->
 <script>
   (function(){
     var y = document.getElementById('footerYear');
@@ -657,7 +664,7 @@
   })();
 </script>
 
-<!-- ✅ Hamburger toggle logic (no dependencies) -->
+<!-- Hamburger toggle logic -->
 <script>
   (function () {
     const header = document.getElementById("siteHeader");
