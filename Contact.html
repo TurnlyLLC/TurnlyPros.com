@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turnly | Contact</title>
-  <meta name="description" content="Contact Turnly for professional short-term rental turnover services. Manual intake—fast, clear follow-up." />
+  <title>Contact Turnly | Commercial Cleaning Quote</title>
+  <meta name="description" content="Contact Turnly for professional commercial cleaning services for offices, childcare centers, churches, apartment communities, leasing offices, and commercial facilities." />
 
   <!-- External stylesheet (deployment) -->
   <link rel="stylesheet" href="assets/styles.css" />
@@ -38,10 +38,8 @@
 
     a{text-decoration:none;color:inherit}
 
-    /* ✅ responsive container */
     .container{max-width:var(--max);margin:0 auto;padding:0 40px}
 
-    /* Match homepage spacing model (padding-only between sections) */
     .section{padding:48px 40px;margin-bottom:0}
 
     header{
@@ -64,7 +62,6 @@
 
     .brand img{height:56px;width:auto;display:block;max-width:100%}
 
-    /* Desktop menu */
     .menu{display:flex;gap:14px;align-items:center}
 
     .nav-link{
@@ -100,7 +97,6 @@
       transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
     }
 
-    /* Submit button hover + focus signal */
     .btn-primary:hover,
     .btn-primary:focus-visible{
       transform: translateY(-1px);
@@ -113,7 +109,6 @@
       box-shadow: 0 6px 18px rgba(124,92,255,.35);
     }
 
-    /* ✅ Hamburger button (hidden on desktop) */
     .hamburger{
       display:none;
       width:44px;height:44px;
@@ -136,7 +131,6 @@
     .hamburger-lines span:nth-child(2){top:6px}
     .hamburger-lines span:nth-child(3){top:12px}
 
-    /* ✅ Mobile drawer */
     .mobile-drawer{
       display:none;
       border-top:1px solid var(--border);
@@ -157,7 +151,6 @@
       justify-content:center;
     }
 
-    /* ✅ open state */
     header[data-menu-open="true"] .mobile-drawer{display:block;}
     header[data-menu-open="true"] .hamburger-lines span:nth-child(1){top:6px;transform:rotate(45deg)}
     header[data-menu-open="true"] .hamburger-lines span:nth-child(2){opacity:0}
@@ -187,7 +180,6 @@
 
     .divider{height:1px;background:var(--border);margin:16px 0}
 
-    /* Form */
     label{display:block;font-weight:700;margin:12px 0 6px}
 
     input, select, textarea{
@@ -200,7 +192,6 @@
       outline:none;
     }
 
-    /* Fix dropdown readability */
     select{
       background: rgba(16,24,39,.85);
       color: var(--text);
@@ -243,7 +234,6 @@
       max-width:100%;
     }
 
-    /* ✅ SMS consent style */
     .consent{
       margin-top:12px;
       padding:12px;
@@ -272,7 +262,6 @@
       font-weight:600;
     }
 
-    /* ✅ existing breakpoint (layout stack) */
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
       h1{font-size:34px}
@@ -281,7 +270,6 @@
       .form-row{grid-template-columns:1fr}
     }
 
-    /* ✅ mobile nav + hero padding */
     @media (max-width: 720px){
       .container{padding:0 16px;}
       .section{padding:28px 16px;}
@@ -301,9 +289,6 @@
       .btn{width:100%;}
     }
 
-    /* =========================
-       ✅ FOOTER (matches design)
-       ========================= */
     .site-footer{
       border-top: 1px solid var(--border);
       background:
@@ -477,7 +462,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+      <a href="#contact-form" class="btn btn-primary">Request a Quote</a>
     </nav>
 
     <!-- Mobile Hamburger -->
@@ -501,12 +486,12 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="Services.html" class="nav-link">Services</a>
       <a href="Contact.html" class="nav-link">Contact</a>
-      <a href="#contact-form" class="btn btn-primary">Tell Us About Your Property</a>
+      <a href="#contact-form" class="btn btn-primary">Request a Quote</a>
     </div>
   </div>
 </header>
 
-<!-- Contact Hero Video (match Services/Home style) -->
+<!-- Contact Hero Video -->
 <section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
   <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
     <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
@@ -520,43 +505,45 @@
   <section class="container section">
     <div class="grid">
       <div>
-        <h1>Get in Touch With Turnly</h1>
+        <h1>Request a Commercial Cleaning Quote</h1>
         <p class="lead">
-          Whether you manage one listing or an entire portfolio, we’re here to help you simplify turnovers and protect your guest experience.
+          Whether you manage a daycare, church, office, apartment community, leasing office, fitness center, or commercial facility, Turnly is here to help you build a reliable cleaning plan.
         </p>
         <p class="lead" style="margin-top:10px">
-          Have a question? Need a quote? Not sure which service tier is right for you?<br/>
-          Reach out — we’ll respond quickly and clearly.
+          Have a question? Need a walkthrough? Not sure what cleaning schedule makes sense?<br/>
+          Reach out — we’ll respond with clear next steps.
         </p>
 
         <div class="divider"></div>
 
         <h2>What to Use This Form For</h2>
         <ul>
-          <li>Requesting a service quote</li>
-          <li>Asking about service tiers</li>
-          <li>Discussing multi-property or portfolio support</li>
-          <li>Scheduling an onboarding call</li>
+          <li>Requesting a commercial cleaning quote</li>
+          <li>Scheduling a facility walkthrough</li>
+          <li>Asking about recurring cleaning services</li>
+          <li>Discussing childcare, church, office, or apartment cleaning needs</li>
+          <li>Sharing access, schedule, or service details</li>
           <li>General questions about how Turnly works</li>
         </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px">If you’re ready to get started, this is the fastest way.</p>
+        <p class="lead" style="font-size:16px;margin-top:10px">If you’re ready to improve the cleanliness and consistency of your facility, this is the fastest way to start.</p>
 
         <div class="divider"></div>
 
         <h2>What Happens After You Contact Us</h2>
         <ul>
-          <li>We review your message and property details</li>
-          <li>We follow up to clarify your needs (if needed)</li>
-          <li>We recommend the right service tier</li>
-          <li>We get your turnovers scheduled</li>
+          <li>We review your message and facility details</li>
+          <li>We follow up to clarify your cleaning needs if needed</li>
+          <li>We schedule a walkthrough or request additional details</li>
+          <li>We provide a customized cleaning quote</li>
+          <li>We build a cleaning plan around your scope, schedule, and facility needs</li>
         </ul>
         <p class="lead" style="font-size:16px;margin-top:10px"><strong>No pressure. No sales games. Just clear next steps.</strong></p>
       </div>
 
       <div class="card" id="contact-form">
-        <h2 style="margin:0 0 8px">Tell Us About Your Property</h2>
+        <h2 style="margin:0 0 8px">Tell Us About Your Facility</h2>
         <p class="muted" style="margin:0 0 12px">
-          Manual intake (no calendar, no payment). We’ll respond with next steps.
+          Manual intake only. We’ll review your details and respond with next steps.
         </p>
 
         <form id="contactForm" action="https://formspree.io/f/mzddvkgy" method="POST">
@@ -592,31 +579,38 @@
 
           <div class="form-row">
             <div>
-              <label for="size">Property Size</label>
-              <select id="size" name="size">
+              <label for="size">Facility Type</label>
+              <select id="size" name="facility_type">
                 <option value="">Select one</option>
-                <option>Studio / 1 bed</option>
-                <option>2 bed</option>
-                <option>3 bed</option>
-                <option>4+ bed</option>
-                <option>Multiple properties / portfolio</option>
+                <option>Office / Business</option>
+                <option>Childcare / Daycare</option>
+                <option>Church / Worship Facility</option>
+                <option>Apartment Community</option>
+                <option>Leasing Office</option>
+                <option>Fitness Center / Gym</option>
+                <option>Other Commercial Facility</option>
               </select>
             </div>
             <div>
               <label for="tier">Service Interest</label>
-              <select id="tier" name="tier">
+              <select id="tier" name="service_interest">
                 <option value="">Not sure yet</option>
-                <option>Standard Turnover</option>
-                <option>Standard + Linen</option>
-                <option>Full Service Turnover Management</option>
+                <option>Recurring Commercial Cleaning</option>
+                <option>Office Cleaning</option>
+                <option>Childcare / Daycare Cleaning</option>
+                <option>Church Cleaning</option>
+                <option>Apartment Community Cleaning</option>
+                <option>Leasing Office Cleaning</option>
+                <option>Fitness Center Cleaning</option>
+                <option>One-Time / Special Cleaning</option>
               </select>
             </div>
           </div>
 
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Share any details that help: number of properties, typical checkout/check-in windows, access method, linens, etc."></textarea>
+          <textarea id="message" name="message" placeholder="Share any details that help: facility type, square footage, number of restrooms, service frequency, preferred cleaning days, access details, supplies onsite, or any special cleaning needs."></textarea>
 
-          <!-- ✅ SMS CONSENT (required) -->
+          <!-- SMS CONSENT (required) -->
           <div class="consent">
             <label for="smsConsent">
               <input id="smsConsent" name="sms_consent" type="checkbox" required />
@@ -630,7 +624,7 @@
             </label>
           </div>
 
-          <input type="hidden" name="_subject" value="Turnly Contact Form Submission" />
+          <input type="hidden" name="_subject" value="Turnly Commercial Cleaning Inquiry" />
 
           <!-- Honeypot (spam protection) -->
           <div class="hidden" aria-hidden="true">
@@ -663,28 +657,31 @@
 
   <section class="container section">
     <div class="card">
-      <h2>Built for Serious Hosts</h2>
+      <h2>Built for Businesses That Need Reliability</h2>
       <p class="lead" style="font-size:16px">
-        Turnly is built for hosts who care about:
+        Turnly is built for organizations that care about:
       </p>
       <ul>
-        <li>Cleanliness that drives reviews</li>
-        <li>Consistency that protects revenue</li>
-        <li>Systems that scale</li>
+        <li>Consistent recurring cleaning</li>
+        <li>Professional presentation</li>
+        <li>Healthier, cleaner shared spaces</li>
+        <li>Reliable communication</li>
+        <li>Documented quality assurance</li>
+        <li>Cleaning plans that can scale with your facility needs</li>
       </ul>
-      <p class="lead" style="font-size:16px"><strong>If that sounds like you, we’d love to work together.</strong></p>
+      <p class="lead" style="font-size:16px"><strong>If that sounds like your facility, we’d love to work with you.</strong></p>
     </div>
   </section>
 </main>
 
-<!-- ✅ FOOTER (drop-in across all pages) -->
+<!-- FOOTER -->
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-col footer-brand">
       <img class="footer-logo" src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
       <p class="footer-tagline">
-        Professional short-term rental turnovers built for serious hosts.
-        <span class="footer-tagline-strong">Reliable. Documented. Scalable.</span>
+        Professional commercial cleaning services for businesses and facilities.
+        <span class="footer-tagline-strong">Reliable. Accountable. Consistent.</span>
       </p>
     </div>
     
@@ -718,7 +715,7 @@
 </footer>
 
 <script>
-  // ✅ Footer year
+  // Footer year
   (function(){
     var y = document.getElementById('footerYear');
     if(y) y.textContent = new Date().getFullYear();
@@ -726,7 +723,7 @@
 </script>
 
 <script>
-  // ✅ Hamburger menu toggle
+  // Hamburger menu toggle
   (function () {
     const header = document.getElementById("siteHeader");
     const btn = document.getElementById("hamburgerBtn");
@@ -759,7 +756,7 @@
 </script>
 
 <script>
-  // ✅ Phone formatting: (555) 555-5555 AND ignore +1 autofill
+  // Phone formatting: (555) 555-5555 AND ignore +1 autofill
   (function(){
     const phone = document.getElementById('phone');
     if(!phone) return;
@@ -768,7 +765,6 @@
 
     function formatPhone(v){
       let d = digitsOnly(v);
-      // strip leading country code 1
       if(d.length === 11 && d.startsWith('1')) d = d.slice(1);
       d = d.slice(0,10);
 
@@ -779,23 +775,20 @@
 
     function isValidPhone(v){
       const d = digitsOnly(v);
-      if(d.length === 11 && d.startsWith('1')) return true; // +1 allowed
+      if(d.length === 11 && d.startsWith('1')) return true;
       return d.length === 10;
     }
 
     phone.addEventListener('input', () => {
       const caret = phone.selectionStart || phone.value.length;
       phone.value = formatPhone(phone.value);
-      // best-effort caret maintenance
       try { phone.setSelectionRange(caret, caret); } catch(e){}
     });
 
-    // Handle browser autofill
     window.addEventListener('load', () => {
       phone.value = formatPhone(phone.value);
     });
 
-    // Prevent submit if phone invalid (but still allow +1)
     const form = document.getElementById('contactForm');
     form && form.addEventListener('submit', (e) => {
       if(!isValidPhone(phone.value)){
@@ -820,7 +813,7 @@
 </script>
 
 <script>
-  // ✅ Formspree submit + success state + honeypot + readable error messages
+  // Formspree submit + success state + honeypot + readable error messages
   (function(){
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
@@ -830,7 +823,6 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Honeypot check
       const honeypot = form.querySelector('input[name="_gotcha"]');
       if(honeypot && honeypot.value && honeypot.value.trim().length > 0){
         form.classList.add('hidden');
@@ -844,8 +836,6 @@
       try {
         const formData = new FormData(form);
 
-        // Formspree likes an "email" field (you have it). This helps avoid "is missing" responses:
-        // Ensure sms_consent is included (checkbox required, so it will be).
         const res = await fetch(form.action, {
           method: 'POST',
           body: formData,
@@ -860,7 +850,6 @@
           return;
         }
 
-        // Show actual error message
         let msg = 'Something went wrong. Please email admin@turnlypros.com.';
         const contentType = res.headers.get('content-type') || '';
 
