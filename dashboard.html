@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turnly Commercial Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Turnly Commercial Dashboard</h1>
+      <p>Leads, walkthroughs, quotes, clients, onboarding, and QA records.</p>
+    </div>
+    <button id="signOutBtn" class="hidden">Sign Out</button>
+  </header>
+
+  <main>
+    <section id="loginCard" class="card">
+      <h2>Staff Login</h2>
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="you@email.com" />
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <p id="loginStatus" class="muted"></p>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="stats">
+        <div class="stat"><strong id="statNew">0</strong><span>New Leads</span></div>
+        <div class="stat"><strong id="statWalkthrough">0</strong><span>Walkthroughs</span></div>
+        <div class="stat"><strong id="statQuotes">0</strong><span>Quotes Sent</span></div>
+        <div class="stat"><strong id="statWon">0</strong><span>Won</span></div>
+      </div>
+
+      <section class="card">
+        <div class="sectionHead">
+          <h2>Commercial Leads</h2>
+          <button id="refreshBtn">Refresh</button>
+        </div>
+
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="walkthrough_scheduled">Walkthrough Scheduled</option>
+          <option value="walkthrough_completed">Walkthrough Completed</option>
+          <option value="quote_sent">Quote Sent</option>
+          <option value="contract_sent">Contract Sent</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+          <option value="not_a_fit">Not a Fit</option>
+        </select>
+
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Created</th>
+                <th>Name</th>
+                <th>Facility</th>
+                <th>Service</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>Notes</th>
+                <th>Save</th>
+              </tr>
+            </thead>
+            <tbody id="leadsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
