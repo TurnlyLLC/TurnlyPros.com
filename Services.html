@@ -63,7 +63,8 @@
     }
 
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand img{height:56px;width:auto;display:block;max-width:100%}
+    .brand img{height:42px;width:42px;display:block;max-width:none;object-fit:cover;border-radius:10px}
+    .brand-wordmark{font-size:22px;letter-spacing:-.045em}
 
     .menu{display:flex;gap:14px;align-items:center}
 
@@ -218,7 +219,7 @@
       .container{padding:0 16px;}
       .section{padding:28px 16px;}
 
-      .brand img{height:44px;}
+      .brand img{height:38px;width:38px;}
 
       .menu{display:none;}
       .hamburger{display:inline-flex;}
@@ -250,12 +251,8 @@
       align-items:start;
     }
 
-    .footer-logo{
-      height:48px;
-      width:auto;
-      display:block;
-      max-width:100%;
-    }
+    .footer-brand-lockup{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:850;letter-spacing:-.045em}
+    .footer-logo{height:38px;width:38px;display:block;object-fit:cover;border-radius:9px}
 
     .footer-tagline{
       margin: 12px 0 0;
@@ -398,7 +395,7 @@
 <header id="siteHeader" data-menu-open="false">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Turnly Home">
-      <img src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
+      <img src="turnly-icon-192.png" alt="" /><span class="brand-wordmark">Turnly</span>
     </a>
 
     <nav class="menu" aria-label="Primary">
@@ -664,7 +661,7 @@
 <footer class="site-footer" role="contentinfo">
   <div class="container footer-inner">
     <div class="footer-col footer-brand">
-      <img class="footer-logo" src="https://i.imgur.com/lvkV9Kk.png" alt="Turnly logo" />
+      <div class="footer-brand-lockup"><img class="footer-logo" src="turnly-icon-192.png" alt="" /><span>Turnly</span></div>
       <p class="footer-tagline">
         Professional apartment turnover cleaning for property teams.
         <span class="footer-tagline-strong">Reliable. Accountable. Consistent.</span>
