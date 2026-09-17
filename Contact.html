@@ -396,7 +396,92 @@
         align-items:flex-start;
       }
     }
-  </style>
+  /* Homepage story */
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    .story-hero{position:relative;min-height:min(900px,100svh);display:flex;align-items:flex-end;overflow:hidden;background:#101827}
+    .story-hero-photo,.story-hero-shade{position:absolute;inset:0;width:100%;height:100%}
+    .story-hero-photo{object-fit:cover;object-position:center 55%;transform:scale(1.015)}
+    .story-hero-shade{background:linear-gradient(90deg,rgba(7,13,20,.86) 0%,rgba(7,13,20,.52) 52%,rgba(7,13,20,.08) 100%),linear-gradient(0deg,rgba(7,13,20,.45),transparent 55%)}
+    .story-hero-content{position:relative;z-index:1;width:min(1100px,100%);margin:0 auto;padding:160px 40px 90px}
+    .story-kicker,.story-eyebrow{margin:0 0 16px;color:#b8f4df;font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+    .story-hero h1{max-width:820px;margin:0;font-size:clamp(48px,8vw,104px);line-height:.98;letter-spacing:-.055em;text-wrap:balance}
+    .story-hero .story-intro{max-width:580px;margin:24px 0 28px;color:rgba(255,255,255,.88);font-size:clamp(17px,2vw,21px)}
+    .story-hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .story-hero .btn-primary,.story-ending .btn-primary{background:#08b981;border-color:#08b981;color:#05261d}
+    .story-scroll{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.82);font-size:13px;font-weight:700}
+    .story-scroll::before{content:"↓";display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:16px}
+    .story-opening{padding:110px 24px 95px;text-align:center;background:#f5f3ed;color:#17252b}
+    .story-opening-inner{max-width:780px;margin:auto}
+    .story-opening .story-eyebrow{color:#067a58}
+    .story-copy .story-eyebrow{color:#b8f4df}
+    .story-opening h2,.story-copy h2,.story-ending h2{margin:0 0 20px;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+    .story-opening p:not(.story-eyebrow){max-width:690px;margin:0 auto;color:#536167;font-size:clamp(17px,2vw,20px);line-height:1.7}
+    .story-visual-row{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);align-items:center;gap:clamp(42px,8vw,120px);max-width:1260px;margin:auto;padding:38px 40px 100px}
+    .story-visual-row.is-reversed{grid-template-columns:minmax(300px,.92fr) minmax(0,1.08fr)}
+    .story-visual-row.is-reversed .story-image-wrap{order:2}
+    .story-image-wrap{position:relative;margin:0;min-height:430px;overflow:hidden;border-radius:5px 110px 5px 5px;background:#d7ded8}
+    .story-visual-row.is-reversed .story-image-wrap{border-radius:110px 5px 5px 5px}
+    .story-image-wrap img{display:block;width:100%;height:100%;min-height:430px;position:absolute;inset:0;object-fit:cover}
+    .story-image-wrap figcaption{position:absolute;left:18px;bottom:16px;padding:7px 11px;border-radius:999px;background:rgba(7,13,20,.64);color:#fff;font-size:11px;letter-spacing:.02em}
+    .story-copy{max-width:480px;color:#f3f6f2}
+    .story-copy h2{font-size:clamp(36px,4.4vw,58px)}
+    .story-copy p:not(.story-eyebrow){color:rgba(238,242,255,.78);font-size:17px;line-height:1.75}
+    .story-copy .story-step{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;color:#b8f4df;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .story-step span{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(184,244,223,.45);border-radius:50%;letter-spacing:0}
+    .story-visual-band{padding:26px 0 58px;background:linear-gradient(180deg,transparent,#111a20 22%,#111a20 80%,transparent)}
+    .story-visual-band .story-visual-row{padding-top:36px;padding-bottom:36px}
+    .story-process{padding:88px 40px 104px;background:#f5f3ed;color:#17252b}
+    .story-process-inner{max-width:1120px;margin:auto}
+    .story-process-heading{max-width:650px;margin-bottom:46px}
+    .story-process h2{margin:0;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.04em}
+    .story-process-heading p:last-child{max-width:580px;color:#536167;font-size:17px;line-height:1.7}
+    .story-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #cbd2ca;border-bottom:1px solid #cbd2ca}
+    .story-step-card{padding:26px 28px 30px 0}
+    .story-step-card+.story-step-card{padding-left:28px;border-left:1px solid #cbd2ca}
+    .story-step-card .step-num{color:#067a58;font-size:12px;font-weight:800;letter-spacing:.14em}
+    .story-step-card h3{margin:14px 0 8px;font-size:22px}
+    .story-step-card p{margin:0;color:#536167;line-height:1.65}
+    .story-ending{position:relative;min-height:570px;display:grid;place-items:center;overflow:hidden;text-align:center}
+    .story-ending img,.story-ending::before{position:absolute;inset:0;width:100%;height:100%}
+    .story-ending img{object-fit:cover}
+    .story-ending::before{content:"";z-index:1;background:rgba(7,13,20,.67)}
+    .story-ending-content{position:relative;z-index:2;max-width:800px;padding:90px 24px}
+    .story-ending h2{font-size:clamp(42px,7vw,76px)}
+    .story-ending p:not(.story-eyebrow){max-width:600px;margin:0 auto 26px;color:rgba(255,255,255,.85);font-size:18px;line-height:1.7}
+    .story-image-note{margin:0;padding:0 20px 24px;background:#101827;color:#b7c1d1;text-align:center;font-size:11px}
+    .story-process .story-eyebrow{color:#067a58}
+    @media(max-width:820px){
+      .story-visual-row,.story-visual-row.is-reversed{grid-template-columns:1fr;gap:30px;padding:28px 22px 72px}
+      .story-visual-row.is-reversed .story-image-wrap{order:0}
+      .story-image-wrap,.story-image-wrap img{min-height:clamp(300px,64vw,490px)}
+      .story-copy{max-width:680px}
+      .story-steps{grid-template-columns:1fr}
+      .story-step-card,.story-step-card+.story-step-card{padding:22px 0;border-left:0}
+      .story-step-card+.story-step-card{border-top:1px solid #cbd2ca}
+    }
+    @media(max-width:720px){
+      .story-hero{min-height:88svh;align-items:flex-end}
+      .story-hero-photo{object-position:58% center}
+      .story-hero-shade{background:linear-gradient(0deg,rgba(7,13,20,.88),rgba(7,13,20,.24) 76%)}
+      .story-hero-content{padding:150px 22px 55px}
+      .story-hero h1{font-size:clamp(48px,14vw,78px)}
+      .story-opening{padding:76px 22px 70px}
+      .story-process{padding:68px 22px 76px}
+      .story-ending{min-height:510px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    .story-form-section{padding:92px 40px 104px;background:linear-gradient(180deg,#111a20,#0b0f17);color:var(--text)}
+    .story-form-layout{display:grid;grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);align-items:start;gap:clamp(36px,7vw,100px);max-width:1260px;margin:0 auto}
+    .story-form-copy{padding-top:24px}
+    .story-form-copy h2{margin:0 0 18px;font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+    .story-form-copy p:not(.story-eyebrow){color:#c6cfda;font-size:17px;line-height:1.7}
+    .story-form-copy .story-eyebrow{color:#b8f4df}
+    .story-form-copy a:not(.btn){color:#b8f4df;text-decoration:underline;text-underline-offset:3px}
+    .story-form-section .card{margin:0}
+    .story-form-section .muted,.story-form-section .hint,.story-form-section .consent small{color:#c5cfdd}
+    @media(max-width:820px){.story-form-section{padding:68px 22px 78px}.story-form-layout{grid-template-columns:1fr;gap:28px}.story-form-copy{padding-top:0}}
+</style>
 </head>
 
 <body>
@@ -438,57 +523,95 @@
   </div>
 </header>
 
-<section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
-  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
-    <source src="https://i.imgur.com/mSJDsTC.mp4" type="video/mp4" />
-  </video>
-  <div class="container hero-title-wrap" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
-    <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Contact</h1>
-  </div>
-</section>
-
 <main>
-  <section class="container section">
-    <div class="grid">
-      <div>
-        <h1>Request an Apartment Turnover Quote</h1>
-        <p class="lead">
-          If you manage apartment turns, Turnly is here to help you keep move-outs moving, units cleaner, and leasing teams ready for the next resident.
-        </p>
-        <p class="lead" style="margin-top:10px">
-          Have a rush turn, recurring turnover volume, or a property walkthrough request?<br/>
-          Reach out and we’ll respond with clear next steps.
-        </p>
-
-        <div class="divider"></div>
-
-        <h2>What to Use This Form For</h2>
-        <ul>
-          <li>Requesting an apartment turnover cleaning quote</li>
-          <li>Scheduling a property walkthrough</li>
-          <li>Sharing expected monthly turn volume</li>
-          <li>Discussing move-out cleaning needs, access, or scheduling</li>
-          <li>Sharing unit sizes, service areas, or special property requirements</li>
-          <li>General questions about how Turnly handles apartment turns</li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <h2>What Happens After You Contact Us</h2>
-        <ul>
-          <li>We review your message and property details</li>
-          <li>We follow up to clarify your turnover cleaning needs if needed</li>
-          <li>We schedule a walkthrough or request additional details</li>
-          <li>We provide a customized apartment turnover quote</li>
-          <li>We build a cleaning plan around your scope, schedule, and property needs</li>
-        </ul>
-        <p class="lead" style="font-size:16px;margin-top:10px"><strong>No pressure. No sales games. Just clear next steps.</strong></p>
+  <section class="story-hero" aria-labelledby="contact-story-title">
+    <img class="story-hero-photo" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=2200&amp;q=88" alt="Open apartment living space filled with natural light" fetchpriority="high" />
+    <div class="story-hero-shade" aria-hidden="true"></div>
+    <div class="story-hero-content">
+      <p class="story-kicker">Start with a conversation</p>
+      <h1 id="contact-story-title">Tell us what’s turning.</h1>
+      <p class="story-intro">Share a little about your community and your upcoming apartment turns. We’ll help you find the next step.</p>
+      <div class="story-hero-actions">
+        <a class="btn btn-primary" href="#contact-form">Start an inquiry</a>
+        <a class="story-scroll" href="#contact-story-start">See what happens next</a>
       </div>
+    </div>
+  </section>
 
+  <section class="story-opening" id="contact-story-start" aria-labelledby="contact-opening-title">
+    <div class="story-opening-inner">
+      <p class="story-eyebrow">A clear first step</p>
+      <h2 id="contact-opening-title">Every good turnover plan starts with the property.</h2>
+      <p>A few details about your community, unit needs, and timing help us understand the work ahead. Your inquiry asks for a follow-up; it does not book a cleaning.</p>
+    </div>
+  </section>
+
+  <section class="story-visual-row" aria-labelledby="contact-context-title">
+    <figure class="story-image-wrap">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Bright apartment kitchen and dining room" loading="lazy" />
+      <figcaption>Representative apartment interior</figcaption>
+    </figure>
+    <div class="story-copy">
+      <p class="story-step"><span>01</span> Tell us the context</p>
+      <h2 id="contact-context-title">Help us understand the turn ahead.</h2>
+      <p>Let us know where your community is, what kind of turnover support you need, how many units may be involved, and when they need attention. Include any scope or access details your team can share safely.</p>
+    </div>
+  </section>
+
+  <section class="story-visual-band" aria-labelledby="contact-followup-title">
+    <div class="story-visual-row is-reversed">
+      <figure class="story-image-wrap">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Comfortable apartment interior prepared for its next chapter" loading="lazy" />
+        <figcaption>Representative apartment interior</figcaption>
+      </figure>
+      <div class="story-copy">
+        <p class="story-step"><span>02</span> We follow up</p>
+        <h2 id="contact-followup-title">Then we work through the details together.</h2>
+        <p>Our team reviews your message, follows up to clarify the scope and timing, and arranges a property walkthrough when it would help prepare your quote.</p>
+        <p>Prefer to reach us directly? Email <a href="mailto:admin@turnlypros.com">admin@turnlypros.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-process" aria-labelledby="contact-process-title">
+    <div class="story-process-inner">
+      <div class="story-process-heading">
+        <p class="story-eyebrow">What happens next</p>
+        <h2 id="contact-process-title">A simple path from inquiry to plan.</h2>
+        <p>We’ll keep the conversation focused on your vacant apartments, your standards, and the dates your team is working toward.</p>
+      </div>
+      <div class="story-steps">
+        <article class="story-step-card">
+          <span class="step-num">01 · REVIEW</span>
+          <h3>We read your details</h3>
+          <p>Your community, location, and turnover needs help us understand the request.</p>
+        </article>
+        <article class="story-step-card">
+          <span class="step-num">02 · CONFIRM</span>
+          <h3>We clarify scope and timing</h3>
+          <p>We follow up with questions or arrange a walkthrough when needed.</p>
+        </article>
+        <article class="story-step-card">
+          <span class="step-num">03 · PLAN</span>
+          <h3>You receive next steps</h3>
+          <p>We discuss the cleaning scope and quote with your property team.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-form-section" aria-labelledby="contact-form-story-title">
+    <div class="story-form-layout">
+      <div class="story-form-copy">
+        <p class="story-eyebrow">Let’s talk apartment turns</p>
+        <h2 id="contact-form-story-title">What’s coming up at your community?</h2>
+        <p>Send the details that will help us prepare for a useful conversation. We serve apartment communities and property managers across North Carolina.</p>
+        <p>Want to speak with us directly? <a href="mailto:admin@turnlypros.com">Email Turnly</a> or <a href="https://calendly.com/admin-turnlypros">schedule a discovery call</a>.</p>
+      </div>
       <div class="card" id="contact-form">
-        <h2 style="margin:0 0 8px">Tell Us About Your Facility</h2>
+        <h2 style="margin:0 0 8px">Tell Us About Your Apartment Turns</h2>
         <p class="muted" style="margin:0 0 12px">
-          Manual intake only. We’ll review your details and respond with next steps.
+          Share a few details about your community and upcoming turns. We’ll review your details and respond with next steps.
         </p>
 
         <form id="contactForm">
@@ -590,24 +713,7 @@
       </div>
     </div>
   </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Built for Property Teams That Need Reliable Turns</h2>
-      <p class="lead" style="font-size:16px">
-        Turnly is built for property teams that care about:
-      </p>
-      <ul>
-        <li>Reliable apartment turnover cleaning</li>
-        <li>Units that are move-in ready faster</li>
-        <li>Cleaner kitchens, baths, floors, and high-touch areas</li>
-        <li>Reliable communication</li>
-        <li>Documented quality assurance</li>
-        <li>Cleaning plans that can scale with your turn volume</li>
-      </ul>
-      <p class="lead" style="font-size:16px"><strong>If that sounds like your property, we’d love to work with you.</strong></p>
-    </div>
-  </section>
+  <p class="story-image-note">The apartment photos on this page are representative imagery.</p>
 </main>
 
 <footer class="site-footer" role="contentinfo">

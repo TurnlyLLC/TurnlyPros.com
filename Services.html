@@ -388,7 +388,84 @@
         border-radius: 14px;
       }
     }
-  </style>
+  /* Homepage story */
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    .story-hero{position:relative;min-height:min(900px,100svh);display:flex;align-items:flex-end;overflow:hidden;background:#101827}
+    .story-hero-photo,.story-hero-shade{position:absolute;inset:0;width:100%;height:100%}
+    .story-hero-photo{object-fit:cover;object-position:center 55%;transform:scale(1.015)}
+    .story-hero-shade{background:linear-gradient(90deg,rgba(7,13,20,.86) 0%,rgba(7,13,20,.52) 52%,rgba(7,13,20,.08) 100%),linear-gradient(0deg,rgba(7,13,20,.45),transparent 55%)}
+    .story-hero-content{position:relative;z-index:1;width:min(1100px,100%);margin:0 auto;padding:160px 40px 90px}
+    .story-kicker,.story-eyebrow{margin:0 0 16px;color:#b8f4df;font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}
+    .story-hero h1{max-width:820px;margin:0;font-size:clamp(48px,8vw,104px);line-height:.98;letter-spacing:-.055em;text-wrap:balance}
+    .story-hero .story-intro{max-width:580px;margin:24px 0 28px;color:rgba(255,255,255,.88);font-size:clamp(17px,2vw,21px)}
+    .story-hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .story-hero .btn-primary,.story-ending .btn-primary{background:#08b981;border-color:#08b981;color:#05261d}
+    .story-scroll{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.82);font-size:13px;font-weight:700}
+    .story-scroll::before{content:"↓";display:grid;place-items:center;width:28px;height:28px;border:1px solid rgba(255,255,255,.4);border-radius:50%;font-size:16px}
+    .story-opening{padding:110px 24px 95px;text-align:center;background:#f5f3ed;color:#17252b}
+    .story-opening-inner{max-width:780px;margin:auto}
+    .story-opening .story-eyebrow{color:#067a58}
+    .story-copy .story-eyebrow{color:#b8f4df}
+    .story-opening h2,.story-copy h2,.story-ending h2{margin:0 0 20px;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.04em;text-wrap:balance}
+    .story-opening p:not(.story-eyebrow){max-width:690px;margin:0 auto;color:#536167;font-size:clamp(17px,2vw,20px);line-height:1.7}
+    .story-visual-row{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(300px,.92fr);align-items:center;gap:clamp(42px,8vw,120px);max-width:1260px;margin:auto;padding:38px 40px 100px}
+    .story-visual-row.is-reversed{grid-template-columns:minmax(300px,.92fr) minmax(0,1.08fr)}
+    .story-visual-row.is-reversed .story-image-wrap{order:2}
+    .story-image-wrap{position:relative;margin:0;min-height:430px;overflow:hidden;border-radius:5px 110px 5px 5px;background:#d7ded8}
+    .story-visual-row.is-reversed .story-image-wrap{border-radius:110px 5px 5px 5px}
+    .story-image-wrap img{display:block;width:100%;height:100%;min-height:430px;position:absolute;inset:0;object-fit:cover}
+    .story-image-wrap figcaption{position:absolute;left:18px;bottom:16px;padding:7px 11px;border-radius:999px;background:rgba(7,13,20,.64);color:#fff;font-size:11px;letter-spacing:.02em}
+    .story-copy{max-width:480px;color:#f3f6f2}
+    .story-copy h2{font-size:clamp(36px,4.4vw,58px)}
+    .story-copy p:not(.story-eyebrow){color:rgba(238,242,255,.78);font-size:17px;line-height:1.75}
+    .story-copy .story-step{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;color:#b8f4df;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .story-step span{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(184,244,223,.45);border-radius:50%;letter-spacing:0}
+    .story-visual-band{padding:26px 0 58px;background:linear-gradient(180deg,transparent,#111a20 22%,#111a20 80%,transparent)}
+    .story-visual-band .story-visual-row{padding-top:36px;padding-bottom:36px}
+    .story-process{padding:88px 40px 104px;background:#f5f3ed;color:#17252b}
+    .story-process-inner{max-width:1120px;margin:auto}
+    .story-process-heading{max-width:650px;margin-bottom:46px}
+    .story-process h2{margin:0;font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.04em}
+    .story-process-heading p:last-child{max-width:580px;color:#536167;font-size:17px;line-height:1.7}
+    .story-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #cbd2ca;border-bottom:1px solid #cbd2ca}
+    .story-step-card{padding:26px 28px 30px 0}
+    .story-step-card+.story-step-card{padding-left:28px;border-left:1px solid #cbd2ca}
+    .story-step-card .step-num{color:#067a58;font-size:12px;font-weight:800;letter-spacing:.14em}
+    .story-step-card h3{margin:14px 0 8px;font-size:22px}
+    .story-step-card p{margin:0;color:#536167;line-height:1.65}
+    .story-ending{position:relative;min-height:570px;display:grid;place-items:center;overflow:hidden;text-align:center}
+    .story-ending img,.story-ending::before{position:absolute;inset:0;width:100%;height:100%}
+    .story-ending img{object-fit:cover}
+    .story-ending::before{content:"";z-index:1;background:rgba(7,13,20,.67)}
+    .story-ending-content{position:relative;z-index:2;max-width:800px;padding:90px 24px}
+    .story-ending h2{font-size:clamp(42px,7vw,76px)}
+    .story-ending p:not(.story-eyebrow){max-width:600px;margin:0 auto 26px;color:rgba(255,255,255,.85);font-size:18px;line-height:1.7}
+    .story-image-note{margin:0;padding:0 20px 24px;background:#101827;color:#b7c1d1;text-align:center;font-size:11px}
+    .story-process .story-eyebrow{color:#067a58}
+    @media(max-width:820px){
+      .story-visual-row,.story-visual-row.is-reversed{grid-template-columns:1fr;gap:30px;padding:28px 22px 72px}
+      .story-visual-row.is-reversed .story-image-wrap{order:0}
+      .story-image-wrap,.story-image-wrap img{min-height:clamp(300px,64vw,490px)}
+      .story-copy{max-width:680px}
+      .story-steps{grid-template-columns:1fr}
+      .story-step-card,.story-step-card+.story-step-card{padding:22px 0;border-left:0}
+      .story-step-card+.story-step-card{border-top:1px solid #cbd2ca}
+    }
+    @media(max-width:720px){
+      .story-hero{min-height:88svh;align-items:flex-end}
+      .story-hero-photo{object-position:58% center}
+      .story-hero-shade{background:linear-gradient(0deg,rgba(7,13,20,.88),rgba(7,13,20,.24) 76%)}
+      .story-hero-content{padding:150px 22px 55px}
+      .story-hero h1{font-size:clamp(48px,14vw,78px)}
+      .story-opening{padding:76px 22px 70px}
+      .story-process{padding:68px 22px 76px}
+      .story-ending{min-height:510px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    .story-copy .story-detail-list{padding-left:20px;margin:20px 0 0;color:rgba(238,242,255,.86)}
+    .story-copy .story-detail-list li{margin:9px 0;line-height:1.55}
+</style>
 </head>
 
 <body>
@@ -430,233 +507,115 @@
   </div>
 </header>
 
-<section class="hero" style="position:relative;overflow:hidden;min-height:100vh;">
-  <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100vw;height:100vh;object-fit:cover;z-index:0;filter:brightness(.45);">
-    <source src="https://i.imgur.com/ZGgkclI.mp4" type="video/mp4" />
-  </video>
-  <div class="container hero-title-wrap" style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:0 40px;">
-    <h1 style="font-size:clamp(48px,8vw,96px);letter-spacing:1px;font-weight:900;margin:0;text-align:center;">Turnover Services</h1>
-  </div>
-</section>
-
 <main>
-
-  <section class="container section">
-    <div class="grid">
-      <div>
-        <h1>Apartment Turnover Cleaning Services</h1>
-        <p class="lead">
-          Turnly provides reliable apartment turnover cleaning for property managers, leasing teams, and apartment communities.
-        </p>
-        <p class="lead" style="margin-top:10px">
-          Customized turn programs built around your property, move-out schedule, and unit standards.
-        </p>
-
-        <div class="cta-row">
-          <a class="btn" href="Contact.html#contact-form">Request a Quote</a>
-        </div>
+  <section class="story-hero" aria-labelledby="services-story-title">
+    <img class="story-hero-photo" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=2200&amp;q=88" alt="Bright apartment living area prepared for a new resident" fetchpriority="high" />
+    <div class="story-hero-shade" aria-hidden="true"></div>
+    <div class="story-hero-content">
+      <p class="story-kicker">Apartment turnover cleaning · North Carolina</p>
+      <h1 id="services-story-title">A thoughtful reset between residents.</h1>
+      <p class="story-intro">Turnly focuses on cleaning vacant apartments, with a scope shaped around your property, your unit standards, and your turn dates.</p>
+      <div class="story-hero-actions">
+        <a class="btn btn-primary" href="Contact.html#contact-form">Plan a turnover</a>
+        <a class="story-scroll" href="#services-story-start">See how the work comes together</a>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3 style="margin:0 0 10px">Services We Provide</h3>
-        <ul style="margin:0">
-          <li><strong>Apartment Unit Turnover Cleaning</strong></li>
-          <li><strong>Move-Out Deep Cleaning</strong></li>
-          <li><strong>Make-Ready Cleaning Support</strong></li>
-          <li><strong>Rush Turn Cleaning</strong></li>
-          <li><strong>Recurring Turnover Support</strong></li>
-          <li><strong>Photo-Documented Quality Assurance</strong></li>
+  <section class="story-opening" id="services-story-start" aria-labelledby="services-opening-title">
+    <div class="story-opening-inner">
+      <p class="story-eyebrow">One specialty. Clear expectations.</p>
+      <h2 id="services-opening-title">We work in the window between move-out and move-in.</h2>
+      <p>Each quote reflects the apartment’s condition, layout, agreed cleaning scope, and requested timing. Your team knows what is included before the turn begins.</p>
+    </div>
+  </section>
+
+  <section class="story-visual-row" aria-labelledby="services-kitchen-title">
+    <figure class="story-image-wrap">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Bright apartment kitchen and dining area" loading="lazy" />
+      <figcaption>Representative apartment interior</figcaption>
+    </figure>
+    <div class="story-copy">
+      <p class="story-step"><span>01</span> Start with the essentials</p>
+      <h2 id="services-kitchen-title">Reset the rooms people notice first.</h2>
+      <p>We clean kitchens and bathrooms according to the scope your property team approves, paying attention to surfaces and fixtures throughout each vacant unit.</p>
+      <ul class="story-detail-list">
+        <li>Kitchen counters, sinks, cabinets, and included appliance surfaces</li>
+        <li>Bathrooms, tubs, showers, toilets, mirrors, and fixtures</li>
+        <li>Touchpoints and reachable surfaces included in the checklist</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="story-visual-band" aria-labelledby="services-finish-title">
+    <div class="story-visual-row is-reversed">
+      <figure class="story-image-wrap">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Apartment living space with clean floors and open natural light" loading="lazy" />
+        <figcaption>Representative apartment interior</figcaption>
+      </figure>
+      <div class="story-copy">
+        <p class="story-step"><span>02</span> Finish the full unit</p>
+        <h2 id="services-finish-title">Bring the whole apartment into view.</h2>
+        <p>Bedrooms, living areas, and floors receive the agreed cleaning attention. A final checklist review and photo documentation help your property team see the completed work.</p>
+        <ul class="story-detail-list">
+          <li>Vacuum carpet and clean appropriate hard floors</li>
+          <li>Wipe accessible surfaces and agreed finishing details</li>
+          <li>Record completion details for a clearer handoff</li>
         </ul>
-        <div class="divider"></div>
-        <p class="muted" style="margin:0">
-          Reliable service. Professional communication. Consistent results.
-        </p>
       </div>
     </div>
   </section>
 
-  <section class="container section">
-    <div class="card">
-      <h2>Apartment Unit Turnover Cleaning</h2>
-      <p class="lead" style="font-size:16px">
-        Professional cleaning designed to help vacant units feel clean, fresh, and ready for the next resident.
-      </p>
-
-      <div class="divider"></div>
-
-      <h3>Services Include:</h3>
-      <ul>
-        <li>Kitchen surface cleaning</li>
-        <li>Bathroom cleaning and sanitization</li>
-        <li>Cabinet, counter, appliance exterior, and fixture wipe-downs</li>
-        <li>Vacuuming carpets and rugs</li>
-        <li>Sweeping and mopping hard floors</li>
-        <li>Interior glass, doors, and entryway spot cleaning</li>
-        <li>Touchpoint cleaning</li>
-        <li>Photo-documented quality assurance</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Move-Out Deep Cleaning</h2>
-      <p class="lead" style="font-size:16px">
-        Turnly helps reset units after residents move out so your team can move through inspection and leasing with fewer cleaning follow-ups.
-      </p>
-
-      <div class="divider"></div>
-
-      <h3>Services Include:</h3>
-      <ul>
-        <li>Grease, grime, and dust removal from reachable surfaces</li>
-        <li>Bathroom, vanity, toilet, tub, and shower cleaning</li>
-        <li>Kitchen counter, sink, and appliance exterior cleaning</li>
-        <li>Baseboard and door spot cleaning</li>
-        <li>Floor cleaning based on unit surface type</li>
-        <li>Move-in readiness notes when issues need property team attention</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Rush Turn & Recurring Turn Support</h2>
-      <p class="lead" style="font-size:16px">
-        Whether you have one urgent unit or a steady stream of turns, Turnly can support the schedule your property needs.
-      </p>
-
-      <div class="divider"></div>
-
-      <h3>Services Include:</h3>
-      <ul>
-        <li>Flexible scheduling around move-out and move-in dates</li>
-        <li>Multiple-unit turnover support</li>
-        <li>Recurring support for monthly turn volume</li>
-        <li>Communication around access, delays, and completion</li>
-        <li>Checklist-based completion standards</li>
-        <li>Photo documentation when requested</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Built for Apartment Communities</h2>
-
-      <div class="grid-3" style="margin-top:14px">
-
-        <div class="card card-soft">
-          <h3>Property Managers</h3>
-          <p>
-            Reliable turnover cleaning support for teams balancing move-outs, inspections, maintenance, and move-ins.
-          </p>
-        </div>
-
-        <div class="card card-soft">
-          <h3>Leasing Teams</h3>
-          <p>
-            Cleaner vacant units help your team show, approve, and hand off homes with more confidence.
-          </p>
-        </div>
-
-        <div class="card card-soft">
-          <h3>Apartment Portfolios</h3>
-          <p>
-            Turnly can support single communities or recurring turnover needs across multiple properties.
-          </p>
-        </div>
-
+  <section class="story-process" aria-labelledby="services-process-title">
+    <div class="story-process-inner">
+      <div class="story-process-heading">
+        <p class="story-eyebrow">A smoother handoff</p>
+        <h2 id="services-process-title">A clear plan for every apartment turn.</h2>
+        <p>We align the cleaning scope and timing with your property team before work begins.</p>
+      </div>
+      <div class="story-steps">
+        <article class="story-step-card">
+          <span class="step-num">FIRST · SHARE THE DETAILS</span>
+          <h3>Tell us what is turning</h3>
+          <p>Share the community, unit needs, expected volume, and target dates.</p>
+        </article>
+        <article class="story-step-card">
+          <span class="step-num">THEN · CONFIRM THE SCOPE</span>
+          <h3>Set expectations together</h3>
+          <p>We review condition, cleaning needs, access, and timing with your team.</p>
+        </article>
+        <article class="story-step-card">
+          <span class="step-num">FINALLY · REVIEW THE WORK</span>
+          <h3>Prepare for the next resident</h3>
+          <p>Checklist review and photo documentation support a clear unit handoff.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="container section">
-    <div class="card">
-      <h2>Why Property Teams Choose Turnly</h2>
-
-      <div class="divider"></div>
-
-      <div style="display:flex;flex-direction:column;gap:18px">
-
-        <div style="display:flex;align-items:flex-start;gap:14px">
-          <span style="color:#22c55e;font-size:24px;font-weight:700;line-height:1">✓</span>
-          <div>
-            <strong style="font-size:18px">Reliable & Consistent Turns</strong>
-            <p style="margin:4px 0 0;color:rgba(238,242,255,.85)">
-              Detailed checklists help ensure every apartment turn meets our standards.
-            </p>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px">
-          <span style="color:#22c55e;font-size:24px;font-weight:700;line-height:1">✓</span>
-          <div>
-            <strong style="font-size:18px">Photo-Documented Quality Assurance</strong>
-            <p style="margin:4px 0 0;color:rgba(238,242,255,.85)">
-              Accountability through inspections, documentation, and clear expectations.
-            </p>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px">
-          <span style="color:#22c55e;font-size:24px;font-weight:700;line-height:1">✓</span>
-          <div>
-            <strong style="font-size:18px">Responsive Communication</strong>
-            <p style="margin:4px 0 0;color:rgba(238,242,255,.85)">
-              Quick responses when you need support, updates, or service adjustments.
-            </p>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px">
-          <span style="color:#22c55e;font-size:24px;font-weight:700;line-height:1">✓</span>
-          <div>
-            <strong style="font-size:18px">Flexible Scheduling</strong>
-            <p style="margin:4px 0 0;color:rgba(238,242,255,.85)">
-              Rush, weekly, and custom turnover plans are available based on your property’s needs.
-            </p>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:flex-start;gap:14px">
-          <span style="color:#22c55e;font-size:24px;font-weight:700;line-height:1">✓</span>
-          <div>
-            <strong style="font-size:18px">Built to Scale</strong>
-            <p style="margin:4px 0 0;color:rgba(238,242,255,.85)">
-              Whether you manage one community or multiple properties, Turnly is built to grow with your turn volume.
-            </p>
-          </div>
-        </div>
-
-      </div>
+  <section class="story-visual-row" aria-labelledby="services-schedule-title">
+    <figure class="story-image-wrap">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="A calm, finished apartment interior" loading="lazy" />
+      <figcaption>Representative apartment interior</figcaption>
+    </figure>
+    <div class="story-copy">
+      <p class="story-step"><span>03</span> Fit the property’s needs</p>
+      <h2 id="services-schedule-title">Support for one unit or a recurring turn schedule.</h2>
+      <p>Turnly can discuss single-unit, multiple-unit, rush, and recurring turnover needs. We confirm availability and the agreed plan with your team before scheduling.</p>
+      <a class="btn" href="Contact.html#contact-form">Talk through your schedule</a>
     </div>
   </section>
 
-  <section class="container section">
-    <div class="card">
-      <h2>How To Get Started</h2>
-      <ol style="margin:10px 0 0;padding-left:18px">
-        <li style="margin:8px 0"><strong>Schedule a Walkthrough</strong> — We learn about your property, unit types, access details, and turnover requirements.</li>
-        <li style="margin:8px 0"><strong>Receive a Customized Quote</strong> — Every property receives a tailored apartment turnover scope.</li>
-        <li style="margin:8px 0"><strong>Turn Cleaning Begins</strong> — Our team starts cleaning units according to your schedule.</li>
-        <li style="margin:8px 0"><strong>Ongoing Quality Assurance</strong> — Consistent service supported by inspections and communication.</li>
-      </ol>
+  <section class="story-ending" aria-labelledby="services-ending-title">
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&amp;fit=crop&amp;w=2000&amp;q=85" alt="Welcoming apartment interior ready for a fresh start" loading="lazy" />
+    <div class="story-ending-content">
+      <p class="story-eyebrow">Your next turn starts here</p>
+      <h2 id="services-ending-title">Let’s plan a clean handoff.</h2>
+      <p>Tell us about your apartment community and upcoming turns. We’ll follow up about scope, timing, and next steps.</p>
+      <a class="btn btn-primary" href="Contact.html#contact-form">Request a turnover quote</a>
     </div>
   </section>
-
-  <section class="container section">
-    <div class="card">
-      <h2>Ready For A More Reliable Turnover Cleaning Partner?</h2>
-      <p class="lead" style="font-size:16px">
-        If you manage apartment turns, Turnly can build a cleaning program tailored to your property, schedule, and move-in standards.
-      </p>
-
-      <div class="cta-row">
-        <a class="btn" href="Contact.html#contact-form">Request a Quote</a>
-      </div>
-    </div>
-  </section>
+  <p class="story-image-note">The apartment photos on this page are representative imagery.</p>
 </main>
 
 <footer class="site-footer" role="contentinfo">
