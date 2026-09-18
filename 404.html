@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="theme-color" content="#061523" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <title>Resident Feedback | Turnly</title>
+  <link rel="stylesheet" href="/resident-feedback.css?v=20260918" />
+</head>
+<body class="resident-feedback-page">
+  <main class="resident-feedback-shell">
+    <header class="resident-feedback-brand"><span class="resident-feedback-brand-icon" aria-hidden="true">T</span><span>Turnly<small>Clean spaces. Better living.</small></span></header>
+    <div class="resident-feedback-card">
+      <p class="resident-feedback-eyebrow">YOUR FEEDBACK MATTERS</p>
+      <h1>How was your<br /><em>Turn?</em></h1>
+      <p class="resident-feedback-lead">Your feedback helps us keep your community clean and ready for the next resident.</p>
+      <div id="residentFeedbackChecking" class="resident-feedback-message" role="status" aria-live="polite">Checking your secure feedback link…</div>
+      <form id="residentFeedbackForm" hidden>
+        <fieldset class="resident-feedback-rating-group">
+          <legend>How would you rate the cleaning?</legend>
+          <div class="resident-feedback-stars">
+            <label><input type="radio" name="rating" value="1" required /><span aria-hidden="true">★</span><small>1</small></label>
+            <label><input type="radio" name="rating" value="2" /><span aria-hidden="true">★</span><small>2</small></label>
+            <label><input type="radio" name="rating" value="3" /><span aria-hidden="true">★</span><small>3</small></label>
+            <label><input type="radio" name="rating" value="4" /><span aria-hidden="true">★</span><small>4</small></label>
+            <label><input type="radio" name="rating" value="5" /><span aria-hidden="true">★</span><small>5</small></label>
+          </div>
+        </fieldset>
+        <label class="resident-feedback-comment">Anything you’d like us to know? <span>Optional</span>
+          <textarea name="message" rows="4" maxlength="2000" placeholder="Share a quick note about the cleaning…"></textarea>
+        </label>
+        <label class="resident-feedback-trap" aria-hidden="true">Leave this field empty<input name="company" tabindex="-1" autocomplete="off" /></label>
+        <p class="resident-feedback-privacy">No name, unit number, or property details are needed.</p>
+        <button class="resident-feedback-submit" type="submit">Share feedback</button>
+        <p id="residentFeedbackFormMessage" class="resident-feedback-form-message" role="status" aria-live="polite"></p>
+      </form>
+      <section id="residentFeedbackThanks" class="resident-feedback-thanks" hidden aria-live="polite"><span aria-hidden="true">✓</span><h2>Thank you for sharing.</h2><p>Your feedback helps us create cleaner spaces and better living.</p></section>
+    </div>
+    <a id="residentFeedbackBackHome" class="resident-feedback-home-link" href="/" hidden>Return to the Turnly website</a>
+    <footer>Cleaner spaces. Better living.</footer>
+  </main>
+  <script src="/resident-feedback.js?v=20260918"></script>
+</body>
+</html>

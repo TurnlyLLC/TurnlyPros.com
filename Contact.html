@@ -639,11 +639,11 @@
           <div class="form-row">
             <div>
               <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
+              <input id="name" name="name" type="text" maxlength="120" placeholder="Your name" required />
             </div>
             <div>
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="name@company.com" required />
+              <input id="email" name="email" type="email" maxlength="254" placeholder="name@company.com" required />
             </div>
           </div>
 
@@ -654,6 +654,7 @@
                 id="phone"
                 name="phone"
                 type="tel"
+                maxlength="25"
                 placeholder="(555) 555-5555"
                 inputmode="tel"
                 autocomplete="tel"
@@ -661,44 +662,48 @@
               />
             </div>
             <div>
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="City, NC" />
+              <label for="propertyName">Property / community</label>
+              <input id="propertyName" name="property_name" type="text" maxlength="180" placeholder="Community name" required />
             </div>
           </div>
 
           <div class="form-row">
             <div>
-              <label for="size">Property type</label>
-              <select id="size" name="facility_type">
-                <option value="">Select one</option>
-                <option>Apartment Community</option>
-                <option>Property Management Company</option>
-                <option>Student Housing</option>
-                <option>Multifamily Portfolio</option>
-                <option>Other Apartment Turnover Need</option>
-              </select>
+              <label for="managementCompany">Management company <span>(optional)</span></label>
+              <input id="managementCompany" name="management_company" type="text" maxlength="180" placeholder="Company name" />
             </div>
             <div>
-              <label for="tier">Service interest</label>
-              <select id="tier" name="service_interest">
-                <option value="">Not sure yet</option>
-                <option>Apartment Turnover Cleaning</option>
-                <option>Recurring Turnover Support</option>
-                <option>Rush Turn Cleaning</option>
-                <option>Bulk / Make-Ready Turns</option>
-                <option>Move-Out Deep Cleaning</option>
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" maxlength="120" placeholder="City, NC" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div>
+              <label for="unitCount">Approx. unit count <span>(optional)</span></label>
+              <input id="unitCount" name="unit_count" type="number" min="1" max="10000" step="1" placeholder="e.g. 24" />
+            </div>
+            <div>
+              <label for="timeline">When do you need support?</label>
+              <select id="timeline" name="timeline" required>
+                <option value="">Choose a timeline</option>
+                <option>As soon as available</option>
+                <option>Within 2 weeks</option>
+                <option>Within a month</option>
+                <option>Ongoing turnover support</option>
+                <option>Planning ahead</option>
               </select>
             </div>
           </div>
 
           <label for="message">Turn details</label>
-          <textarea id="message" name="message" placeholder="Include your community name, unit count, target dates, unit sizes, access notes, or special make-ready needs."></textarea>
+          <textarea id="message" name="message" maxlength="5000" required placeholder="Share target dates, unit sizes, access notes, or cleaning needs."></textarea>
 
           <div class="consent">
             <label for="smsConsent">
-              <input id="smsConsent" name="sms_consent" type="checkbox" required />
+              <input id="smsConsent" name="sms_consent" type="checkbox" />
               <span>
-                I agree to receive SMS messages related to my inquiry.
+                I agree to receive SMS messages related to my inquiry (optional).
                 <small>
                   By checking this box, you consent to receive text messages from Turnly regarding your request.
                   Message & data rates may apply. Reply STOP to opt out.
@@ -889,24 +894,21 @@
       }
 
       const smsConsent = document.getElementById('smsConsent');
-      if(!smsConsent || !smsConsent.checked){
-        if(statusEl) statusEl.textContent = 'Please agree to receive SMS messages related to your inquiry.';
-        return;
-      }
-
+      const submitButton = form.querySelector('button[type="submit"]');
       if(statusEl) statusEl.textContent = 'Sending…';
+      if(submitButton){ submitButton.disabled = true; submitButton.textContent = 'Sending…'; }
 
       const payload = {
         name: document.getElementById('name').value.trim(),
         email: document.getElementById('email').value.trim(),
         phone: document.getElementById('phone').value.trim(),
+        property_name: document.getElementById('propertyName').value.trim(),
+        management_company: document.getElementById('managementCompany').value.trim(),
         city: document.getElementById('city').value.trim(),
-        facility_type: document.getElementById('size').value,
-        service_interest: document.getElementById('tier').value,
+        unit_count: document.getElementById('unitCount').value ? Number(document.getElementById('unitCount').value) : null,
+        timeline: document.getElementById('timeline').value,
         message: document.getElementById('message').value.trim(),
-        sms_consent: smsConsent.checked,
-        source: 'website_contact_form',
-        source_url: window.location.href
+        sms_consent: Boolean(smsConsent && smsConsent.checked)
       };
 
       let response;
@@ -917,14 +919,14 @@
           body: JSON.stringify(payload)
         });
       } catch(error) {
-        console.error(error);
         if(statusEl) statusEl.textContent = 'We couldn’t send your inquiry. Please email admin@turnlypros.com.';
+        if(submitButton){ submitButton.disabled = false; submitButton.textContent = 'Send inquiry'; }
         return;
       }
 
       if(!response.ok){
-        console.error(await response.text());
         if(statusEl) statusEl.textContent = 'We couldn’t send your inquiry. Please email admin@turnlypros.com.';
+        if(submitButton){ submitButton.disabled = false; submitButton.textContent = 'Send inquiry'; }
         return;
       }
 
