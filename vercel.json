@@ -1,24 +1,25 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
+      "src": "^/(?:index\\.html)?$",
       "has": [
         {
           "type": "host",
           "value": "residental.turnlypros.com"
         }
       ],
-      "destination": "/residential/index.html"
+      "dest": "/residential/index.html"
     },
     {
-      "source": "/:path((?!residential/).*)",
+      "src": "^/((?!residential/).*)$",
       "has": [
         {
           "type": "host",
           "value": "residental.turnlypros.com"
         }
       ],
-      "destination": "/residential/:path"
-    }
+      "dest": "/residential/$1"
+    },
+    { "handle": "filesystem" }
   ]
 }
