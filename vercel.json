@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "residential.turnlypros.com"
+        }
+      ],
+      "destination": "/residential/index.html"
+    },
+    {
+      "source": "/:path((?!residential/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "residential.turnlypros.com"
+        }
+      ],
+      "destination": "/residential/:path"
+    }
+  ]
+}
