@@ -1,6 +1,11 @@
 {
   "routes": [
     {
+      "src": "^/f(?:/.*)?$",
+      "headers": { "Cache-Control": "no-store", "Referrer-Policy": "no-referrer", "X-Robots-Tag": "noindex, nofollow" },
+      "dest": "/feedback/index.html"
+    },
+    {
       "src": "^/(?:index\\.html)?$",
       "has": [
         {
