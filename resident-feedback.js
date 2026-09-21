@@ -47,6 +47,9 @@
     } finally { clearTimeout(timer); }
   }
   function showThanks({ focus = true } = {}) {
+    $('residentQuoteLink').href = preview
+      ? '/residential/Contact.html?source=resident-feedback&preview=1#contact-form'
+      : `/residential/Contact.html?source=resident-feedback#card=${encodeURIComponent(token)}`;
     ready = false;
     form.hidden = true;
     $('residentFeedbackChecking').hidden = true;

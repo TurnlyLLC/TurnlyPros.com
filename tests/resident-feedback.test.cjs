@@ -27,9 +27,12 @@ test('resident form: QR validation, mobile layout, ratings, details, retries and
     const page=await browser.newPage({viewport:{width:1440,height:1100}});
     const errors=[];page.on('pageerror',error=>errors.push(error.message));
     const submissions=[];let checks=0;let lookupFails=true;let active=true;let failSave=true;
+    const inquiries=[];
+    await page.route('https://portal.turnlypros.com/api/website-inquiries',async route=>{inquiries.push(route.request().postDataJSON());await route.fulfill({json:{ok:true}})});
     await page.route('https://portal.turnlypros.com/api/resident-feedback',async route=>{
       const body=route.request().postDataJSON();
       assert.equal(body.token,token);
+      if(body.action==='quote_context')return route.fulfill({json:{ok:true,context:{property_name:'Vetra Forest Hills',bedrooms:0,bathrooms:1.5,square_feet:850}}});
       assert.equal(route.request().headers().referer,undefined,'Token must not leak through a referrer');
       if(body.action==='resolve'){
         checks++;
@@ -78,7 +81,26 @@ test('resident form: QR validation, mobile layout, ratings, details, retries and
     assert.equal(await page.locator('#residentFeedbackForm').isVisible(),false);
     assert.equal(await page.evaluate(()=>document.activeElement.id),'thanksTitle');
     if(qa)await page.screenshot({path:path.join(qa,'resident-thanks.png'),fullPage:true});
-    await page.reload();
+    const quoteLink = await page.getByRole('link',{name:'Request a quote now'}).getAttribute('href');
+    assert.equal(new URL(quoteLink,base).search.includes(token),false);
+    assert.ok(quoteLink.endsWith('#card='+token));
+    await page.getByRole('link',{name:'Request a quote now'}).click();
+    await page.waitForFunction(()=>document.getElementById('squareFeet')?.value==='850');
+    assert.equal(await page.locator('#bedrooms').inputValue(),'0');
+    assert.equal(await page.locator('#bathrooms').inputValue(),'1.5');
+    assert.equal(page.url().includes(token),false,'Token is removed from the visible URL');
+    assert.match(await page.locator('#quoteCommunity').textContent(),/Vetra Forest Hills/);
+    await page.locator('#name').fill('Test Resident');await page.locator('#email').fill('test@example.com');
+    await page.locator('#phone').fill('9195550100');await page.locator('#city').fill('Raleigh');
+    await page.locator('#streetAddress').fill('123 Test Street');await page.locator('#unitNumber').fill('2B');
+    await page.locator('#state').fill('NC');await page.locator('#postalCode').fill('27601');
+    await page.locator('#squareFeet').fill('900');await page.locator('#tier').selectOption('Deep cleaning');
+    await page.locator('#frequency').selectOption('Monthly');await page.locator('#message').fill('Occasional deep cleans, especially the kitchen.');
+    if(qa){await page.setViewportSize({width:390,height:844});await page.locator('#contact-form').screenshot({path:path.join(qa,'quote-form-mobile.png')})}
+    await page.locator('#contactForm button[type="submit"]').click();await page.locator('#formSuccess').waitFor();
+    assert.equal(inquiries.length,1);assert.equal(inquiries[0].street_address,'123 Test Street');assert.equal(inquiries[0].square_feet,'900');
+    assert.equal(inquiries[0].feedback_token,token);assert.equal(inquiries[0].source_url.includes(token),false);assert.equal(inquiries[0].sms_consent,false);
+    await page.goto(`${base}/f/${token}`);
     await page.locator('#residentFeedbackThanks').waitFor();
     assert.equal(submissions.length,2,'Reload must not submit again');
     // Expired/deleted cards cannot open a form, even after a previous successful submission.
@@ -100,6 +122,9 @@ test('resident form: QR validation, mobile layout, ratings, details, retries and
     assert.match(await page.locator('#thanksMessage').textContent(),/did not save/);
     assert.equal(submissions.length,2);
     assert.equal(checks,before,'Preview must not contact the service');
+    await page.getByRole('link',{name:'Request a quote now'}).click();
+    await page.getByText('Preview only: this form will not save a quote request.').waitFor();
+    assert.equal(await page.locator('#squareFeet').inputValue(),'');
     assert.deepEqual(errors,[]);
   } finally {await browser?.close();await new Promise(resolve=>server.close(resolve))}
 });
