@@ -1,6 +1,26 @@
 {
   "routes": [
     {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "res.turnlypros.com"
+        }
+      ],
+      "dest": "/residential/index.html"
+    },
+    {
+      "src": "^/((?!residential/).*)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "res.turnlypros.com"
+        }
+      ],
+      "dest": "/residential/$1"
+    },
+    {
       "src": "^/f(?:/.*)?$",
       "headers": {
         "Cache-Control": "no-store",
