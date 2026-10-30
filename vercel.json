@@ -34,6 +34,46 @@
       "has": [
         {
           "type": "host",
+          "value": "turnlypros.com"
+        }
+      ],
+      "dest": "/residential/index.html"
+    },
+    {
+      "src": "^/((?!residential/|resident-feedback\\.(?:js|css)$|feedback/).*)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "turnlypros.com"
+        }
+      ],
+      "dest": "/residential/$1"
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.turnlypros.com"
+        }
+      ],
+      "dest": "/residential/index.html"
+    },
+    {
+      "src": "^/((?!residential/|resident-feedback\\.(?:js|css)$|feedback/).*)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.turnlypros.com"
+        }
+      ],
+      "dest": "/residential/$1"
+    },
+    {
+      "src": "^/(?:index\\.html)?$",
+      "has": [
+        {
+          "type": "host",
           "value": "residental.turnlypros.com"
         }
       ],
