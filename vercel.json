@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "src": "^/blog/?$",
+      "dest": "/blog/index.html"
+    },
+    {
+      "src": "^/blog/([a-z0-9-]+)/?$",
+      "dest": "/blog/$1/index.html"
+    },
+    {
+      "src": "^/blog/(blog\\.css|sitemap\\.xml)$",
+      "dest": "/blog/$1"
+    },
+    {
+      "src": "^/robots\\.txt$",
+      "dest": "/robots.txt"
+    },
+    {
       "src": "^/(?:index\\.html)?$",
       "has": [
         {
@@ -95,5 +111,7 @@
   ],
   "github": {
     "silent": true
-  }
+  },
+  "buildCommand": "node scripts/build-blog.cjs",
+  "outputDirectory": "."
 }
