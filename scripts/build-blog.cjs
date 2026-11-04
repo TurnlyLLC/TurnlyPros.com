@@ -40,9 +40,26 @@ const articles = fs.readdirSync(path.join(out, 'posts')).filter(file => file.end
   const jsonLd = JSON.stringify({'@context':'https://schema.org','@type':'Article','headline':heading.slice(2),'description':summary,'author':{'@type':'Organization','name':'Turnly'},'publisher':{'@type':'Organization','name':'Turnly'},'mainEntityOfPage':base+'/blog/'+slug+'/'});
   return {slug,title:heading.slice(2),summary,html,url:'/blog/'+slug+'/',jsonLd};
 });
+// Build from the public homepage so future navigation and branding changes reach the blog.
+const homepage = fs.readFileSync(path.join(out, '../residential/index.html'), 'utf8');
+function fragment(pattern) {
+  const match = homepage.match(pattern);
+  if (!match) throw Error('Could not find homepage layout: ' + pattern);
+  return match[0];
+}
+function siteLinks(markup) {
+  return markup.replace(/(href|src)="([^"]+)"/g, (attribute, key, value) => {
+    const target = value === '#' ? '/' : new URL(value, base + '/').href;
+    return key + '="' + target + '"';
+  });
+}
+const styles = fragment(/<style>[\s\S]*?<\/style>/);
+const header = siteLinks(fragment(/<header\b[\s\S]*?<\/header>/)).replaceAll('class="nav-link">Blog', 'class="nav-link" aria-current="page">Blog');
+const footer = siteLinks(fragment(/<footer\b[\s\S]*?<\/footer>/));
+const controls = homepage.slice(homepage.indexOf('</footer>') + '</footer>'.length, homepage.indexOf('</body>'));
 function page(title, description, url, body, jsonLd) {
   const ld = jsonLd ? '<script type="application/ld+json">'+jsonLd+'</script>' : '';
-  return '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+escape(title)+' | Turnly Pro Cleaners</title><meta name="description" content="'+escape(description)+'"><link rel="canonical" href="'+base+url+'"><link rel="stylesheet" href="/blog/blog.css">'+ld+'<header><a href="/"><img src="/turnly-icon-192.png" alt="">Turnly Pro Cleaners</a><a href="/Services.html">Services</a></header><main>'+body+'</main><footer><a href="/blog/">Cleaning guides</a> · <a href="/Contact.html">Contact Turnly</a></footer></html>';
+  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+escape(title)+' | Turnly Pro Cleaners</title><meta name="description" content="'+escape(description)+'"><link rel="canonical" href="'+base+url+'"><link rel="icon" href="/favicon.ico">'+styles+'<link rel="stylesheet" href="/blog/blog.css">'+ld+'</head><body>'+header+'<main class="journal"><div class="journal-inner">'+body+'</div></main>'+footer+controls+'</body></html>';
 }
 for (const a of articles) {
   const dir = path.join(out,a.slug);

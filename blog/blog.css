@@ -1,1 +1,15 @@
-*{box-sizing:border-box}body{margin:0;color:#11324a;background:#fafcfb;font:1.08rem/1.65 system-ui,sans-serif}header,footer{background:white;padding:1rem max(5vw,calc((100vw - 68rem)/2));border-block:1px solid #dbe8e5}header{display:flex;align-items:center;justify-content:space-between}header a:first-child{display:flex;align-items:center;gap:.75rem;font-weight:750}header img{width:2.5rem;border-radius:.5rem}main{max-width:48rem;margin:4rem auto;padding:0 1.5rem}a{color:#00695f}h1{font-size:clamp(2.3rem,6vw,3.7rem);line-height:1.12;letter-spacing:-.04em}section{padding:1rem 1.5rem;border:1px solid #dbe8e5;border-radius:1rem;background:white}small{letter-spacing:.14em;font-weight:700;color:#00695f}
+.journal{background:#f5f3ed;color:#17252b;padding:clamp(3rem,7vw,6rem) 24px}
+.journal-inner{max-width:960px;margin:auto}
+.journal small,.journal-inner>a{color:#067a58;font-size:.8rem;letter-spacing:.12em;font-weight:800}
+.journal h1{font-size:clamp(2.45rem,6vw,4.6rem);line-height:1.04;letter-spacing:-.05em;max-width:20ch;margin:1rem 0 2rem;text-wrap:balance}
+.journal section{border-top:1px solid #cbd2ca;padding:1.5rem 0}
+.journal section h2{margin:0;font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.035em}
+.journal section h2 a:hover,.journal section h2 a:focus-visible{color:#067a58;text-decoration:underline}
+.journal p,.journal li{max-width:70ch;color:#46565b;font-size:1.08rem;line-height:1.75}
+.journal article{max-width:760px}
+.journal article h2{margin:2.4rem 0 .6rem;font-size:clamp(1.5rem,3vw,2rem);line-height:1.18;letter-spacing:-.035em}
+.journal article a{color:#067a58;text-decoration:underline}
+.journal img{max-width:100%;height:auto;border-radius:5px}
+.journal table{display:block;overflow-x:auto;border-collapse:collapse}
+.journal th,.journal td{padding:.7rem;text-align:left;border-bottom:1px solid #cbd2ca}
+.nav-link[aria-current="page"]{text-decoration:underline;text-underline-offset:.35em}
