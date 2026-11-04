@@ -7,10 +7,14 @@
 .journal section h2 a:hover,.journal section h2 a:focus-visible{color:#067a58;text-decoration:underline}
 .journal p,.journal li{max-width:70ch;color:#46565b;font-size:1.08rem;line-height:1.75}
 .journal article{width:100%;min-width:0;overflow-wrap:anywhere}
-.journal article>p,.journal article>ul,.journal article>ol,.journal article>h2,.journal article>h3{width:min(100%,84ch);max-width:none;margin-inline:auto}
-.journal article>p:has(>img:only-child){width:100%;margin-block:clamp(1rem,2.5vw,2rem)}
-.journal article img{display:block;width:100%;height:auto}
-.journal article>h2{margin-inline:auto}
+.journal-inner:has(article){max-width:58rem}
+.journal article>p,.journal article>ul,.journal article>ol{max-width:none}
+.journal article>p:has(>img:only-child){margin-block:clamp(1rem,2vw,1.75rem)}
+.journal article img{display:block;max-width:100%;height:auto}
+.journal article p>img:only-child{width:100%;aspect-ratio:2.4;object-fit:cover}
+@media(max-width:600px){
+  .journal article p>img:only-child{aspect-ratio:1.65}
+}
 .journal-inner>a{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:600px){
   .journal h1{line-height:1.12;letter-spacing:-.035em;margin-block:.5rem 1.25rem}
