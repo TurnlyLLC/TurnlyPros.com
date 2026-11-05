@@ -1,6 +1,21 @@
 {
   "routes": [
     {
+      "src": "^/apply/?$",
+      "status": 308,
+      "headers": {
+        "Location": "/apply.html"
+      }
+    },
+    {
+      "src": "^/(apply\\.html|apply\\.mjs|applications-20261019-logo\\.css|assets/turnly-website-logo\\.png)$",
+      "dest": "/$1"
+    },
+    {
+      "src": "^/api/applicants$",
+      "dest": "https://portal.turnlypros.com/api/applicants"
+    },
+    {
       "src": "^/blog/?$",
       "dest": "/blog/index.html"
     },
